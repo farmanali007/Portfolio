@@ -30,6 +30,12 @@
     <link rel="icon" href="assets/android-chrome-512x512.png" type="image/x-icon"> 
   </head>
   <body>
+    <!-- Custom Futuristic Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Audio System for UI Sounds -->
+    <div id="audioSystem" style="display: none;"></div>
+    
     <!-- Scroll Progress Bar -->
 <div id="scroll-bar" class="fixed right-6 top-1/2 transform -translate-y-1/2 h-64 w-1.5 bg-gray-700 rounded-full z-50 hidden sm:block">
   <div id="scroll-indicator" class="bg-[#1DCD9F] h-0 w-full rounded-full transition-all duration-300 ease-out shadow-md shadow-[#1DCD9F]"></div>
@@ -1933,6 +1939,409 @@
       </button>
     </div>
     <script src="script.js"></script>
+    
+    <!-- Game-Style Audio System -->
+    <script>
+      // Advanced Game Audio System
+      class GameAudioSystem {
+        constructor() {
+          this.audioContext = null;
+          this.masterVolume = 0.3;
+          this.enabled = true;
+          this.soundCache = new Map();
+          this.lastPlayTime = new Map();
+          this.cooldown = 100; // ms between same sound plays
+          
+          this.initAudioContext();
+          this.setupVolumeControl();
+        }
+        
+        async initAudioContext() {
+          try {
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Resume context on first user interaction
+            const resumeContext = () => {
+              if (this.audioContext.state === 'suspended') {
+                this.audioContext.resume();
+              }
+              document.removeEventListener('click', resumeContext);
+              document.removeEventListener('keydown', resumeContext);
+              document.removeEventListener('touchstart', resumeContext);
+            };
+            
+            document.addEventListener('click', resumeContext);
+            document.addEventListener('keydown', resumeContext);
+            document.addEventListener('touchstart', resumeContext);
+            
+          } catch (error) {
+            console.log('Web Audio API not supported');
+            this.enabled = false;
+          }
+        }
+        
+        setupVolumeControl() {
+          // Add volume control (hidden by default)
+          const volumeControl = document.createElement('div');
+          volumeControl.id = 'audioVolumeControl';
+          volumeControl.innerHTML = `
+            <div style="position: fixed; top: 20px; right: 20px; z-index: 10001; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px; display: none;" id="volumePanel">
+              <label style="color: #00ff88; font-size: 12px;">Audio: </label>
+              <input type="range" id="volumeSlider" min="0" max="100" value="30" style="width: 80px;">
+              <button id="muteBtn" style="background: none; border: 1px solid #00ff88; color: #00ff88; padding: 2px 6px; margin-left: 5px; font-size: 10px;">🔊</button>
+            </div>
+          `;
+          document.body.appendChild(volumeControl);
+          
+          // Toggle volume panel on Ctrl+M
+          document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'm') {
+              const panel = document.getElementById('volumePanel');
+              panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            }
+          });
+          
+          // Volume control
+          const slider = document.getElementById('volumeSlider');
+          const muteBtn = document.getElementById('muteBtn');
+          
+          slider.addEventListener('input', (e) => {
+            this.masterVolume = e.target.value / 100;
+          });
+          
+          muteBtn.addEventListener('click', () => {
+            this.enabled = !this.enabled;
+            muteBtn.textContent = this.enabled ? '🔊' : '🔇';
+          });
+        }
+        
+        // Create futuristic hover sound
+        createHoverSound(frequency = 800, duration = 0.1) {
+          if (!this.enabled || !this.audioContext) return;
+          
+          const oscillator = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+          const filterNode = this.audioContext.createBiquadFilter();
+          
+          // Configure filter for sci-fi effect
+          filterNode.type = 'lowpass';
+          filterNode.frequency.setValueAtTime(frequency * 2, this.audioContext.currentTime);
+          filterNode.frequency.exponentialRampToValueAtTime(frequency, this.audioContext.currentTime + duration);
+          
+          // Configure oscillator
+          oscillator.type = 'sine';
+          oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency * 1.2, this.audioContext.currentTime + duration * 0.3);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency, this.audioContext.currentTime + duration);
+          
+          // Configure gain envelope
+          gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(this.masterVolume * 0.3, this.audioContext.currentTime + 0.01);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+          
+          // Connect nodes
+          oscillator.connect(filterNode);
+          filterNode.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+          
+          // Play sound
+          oscillator.start(this.audioContext.currentTime);
+          oscillator.stop(this.audioContext.currentTime + duration);
+        }
+        
+        // Create sharp click sound
+        createClickSound(frequency = 2000, duration = 0.08) {
+          if (!this.enabled || !this.audioContext) return;
+          
+          const oscillator = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+          const filterNode = this.audioContext.createBiquadFilter();
+          
+          // Configure filter for sharp high-frequency sound
+          filterNode.type = 'highpass';
+          filterNode.frequency.setValueAtTime(frequency * 0.8, this.audioContext.currentTime);
+          filterNode.Q.setValueAtTime(8, this.audioContext.currentTime);
+          
+          // Configure oscillator for sharp metallic sound
+          oscillator.type = 'sawtooth';
+          oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency * 2.5, this.audioContext.currentTime + 0.01);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency * 0.3, this.audioContext.currentTime + duration);
+          
+          // Very sharp attack and quick decay
+          gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(this.masterVolume * 0.8, this.audioContext.currentTime + 0.002);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+          
+          // Connect nodes
+          oscillator.connect(filterNode);
+          filterNode.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+          
+          // Play sound
+          oscillator.start(this.audioContext.currentTime);
+          oscillator.stop(this.audioContext.currentTime + duration);
+        }
+        
+        // Create tech/digital sound effect
+        createTechSound(baseFreq = 600, duration = 0.15) {
+          if (!this.enabled || !this.audioContext) return;
+          
+          const oscillator = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+          const filterNode = this.audioContext.createBiquadFilter();
+          const delayNode = this.audioContext.createDelay();
+          const feedbackNode = this.audioContext.createGain();
+          
+          // Configure delay for digital effect
+          delayNode.delayTime.setValueAtTime(0.02, this.audioContext.currentTime);
+          feedbackNode.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+          
+          // Configure filter
+          filterNode.type = 'highpass';
+          filterNode.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
+          
+          // Configure oscillator with frequency modulation
+          oscillator.type = 'sawtooth';
+          oscillator.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
+          oscillator.frequency.setValueAtTime(baseFreq * 1.5, this.audioContext.currentTime + 0.05);
+          oscillator.frequency.setValueAtTime(baseFreq * 0.8, this.audioContext.currentTime + duration);
+          
+          // Configure gain
+          gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(this.masterVolume * 0.4, this.audioContext.currentTime + 0.01);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+          
+          // Connect nodes with delay feedback
+          oscillator.connect(filterNode);
+          filterNode.connect(delayNode);
+          delayNode.connect(feedbackNode);
+          feedbackNode.connect(delayNode);
+          filterNode.connect(gainNode);
+          delayNode.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+          
+          // Play sound
+          oscillator.start(this.audioContext.currentTime);
+          oscillator.stop(this.audioContext.currentTime + duration);
+        }
+        
+        // Play sound with cooldown
+        playSound(soundType, ...params) {
+          const now = Date.now();
+          const lastPlayed = this.lastPlayTime.get(soundType) || 0;
+          
+          if (now - lastPlayed < this.cooldown) return;
+          
+          this.lastPlayTime.set(soundType, now);
+          
+          switch (soundType) {
+            case 'hover':
+              this.createHoverSound(...params);
+              break;
+            case 'click':
+              this.createClickSound(...params);
+              break;
+            case 'tech':
+              this.createTechSound(...params);
+              break;
+          }
+        }
+      }
+      
+      // Initialize audio system
+      let gameAudio;
+      document.addEventListener('DOMContentLoaded', () => {
+        gameAudio = new GameAudioSystem();
+      });
+    </script>
+    
+    <!-- Advanced Futuristic Cursor System -->
+    <script>
+      // High-Performance Cursor Implementation
+      document.addEventListener('DOMContentLoaded', function() {
+        const cursor = document.getElementById('customCursor');
+        if (!cursor) return;
+        
+        // Performance optimized variables
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let isMoving = false;
+        let lastMoveTime = 0;
+        const trails = new Set();
+        const maxTrails = 8;
+        let animationId;
+        
+        // Default cursor movement
+        function updateCursor() {
+          cursorX = mouseX;
+          cursorY = mouseY;
+          
+          cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+          
+          // Create trails when moving
+          const velocity = Math.sqrt((mouseX - cursorX) ** 2 + (mouseY - cursorY) ** 2);
+          if (velocity > 2 && Date.now() - lastMoveTime > 80) {
+            createTrail(cursorX, cursorY);
+            lastMoveTime = Date.now();
+          }
+          
+          animationId = requestAnimationFrame(updateCursor);
+        }
+        
+        // Optimized trail creation
+        function createTrail(x, y) {
+          if (trails.size >= maxTrails) {
+            const oldTrail = trails.values().next().value;
+            if (oldTrail?.parentNode) {
+              oldTrail.parentNode.removeChild(oldTrail);
+            }
+            trails.delete(oldTrail);
+          }
+          
+          const trail = document.createElement('div');
+          trail.className = cursor.classList.contains('click') ? 'cursor-trail click-trail' : 'cursor-trail';
+          trail.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          document.body.appendChild(trail);
+          trails.add(trail);
+          
+          // Fast cleanup
+          setTimeout(() => {
+            if (trail?.parentNode) {
+              trail.parentNode.removeChild(trail);
+              trails.delete(trail);
+            }
+          }, 600);
+        }
+        
+        // Create scan line effect on fast movement
+        function createScanline(x, y) {
+          const scanline = document.createElement('div');
+          scanline.className = 'cursor-scanline';
+          scanline.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          document.body.appendChild(scanline);
+          
+          setTimeout(() => {
+            if (scanline?.parentNode) {
+              scanline.parentNode.removeChild(scanline);
+            }
+          }, 800);
+        }
+        
+        // High-frequency mouse tracking
+        let rafId;
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          
+          // Create scanlines on very fast movement
+          const velocity = Math.sqrt(
+            Math.pow(e.movementX, 2) + Math.pow(e.movementY, 2)
+          );
+          
+          if (velocity > 10 && Math.random() < 0.3) {
+            createScanline(mouseX, mouseY);
+          }
+        }, { passive: true });
+        
+        // Enhanced hover detection with delegation
+        const interactiveSelectors = [
+          'a', 'button', 'input', 'textarea', 'select',
+          '.clickable', '.tech-item', '.social-link', 
+          '.social-link-simple', '.resume-btn', '.social-btn',
+          '.blog-view-all-btn', '.journey-card', '.project-card'
+        ];
+        
+        document.addEventListener('mouseover', (e) => {
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target) {
+            cursor.classList.add('hover');
+          }
+        }, { passive: true });
+        
+        document.addEventListener('mouseout', (e) => {
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target && !e.relatedTarget?.closest(interactiveSelectors.join(', '))) {
+            cursor.classList.remove('hover');
+          }
+        }, { passive: true });
+        
+        // Instant click feedback
+        document.addEventListener('mousedown', (e) => {
+          cursor.classList.add('click');
+          createTrail(cursorX, cursorY);
+          // Play click sound on interactive elements
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target && gameAudio) {
+            gameAudio.playSound('click');
+          }
+        }, { passive: true });
+        
+        document.addEventListener('mouseup', () => {
+          cursor.classList.remove('click');
+        }, { passive: true });
+        
+        // Always visible cursor
+        cursor.style.opacity = '1';
+        document.addEventListener('mouseenter', () => {
+          if (!animationId) updateCursor();
+        }, { passive: true });
+        
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Tab') {
+            cursor.classList.add('hover');
+            setTimeout(() => cursor.classList.remove('hover'), 200);
+          }
+          if (e.key === 'Enter' && document.activeElement?.closest(interactiveSelectors.join(', '))) {
+            // Play click sound for keyboard activation
+            if (gameAudio) {
+              gameAudio.playSound('click');
+            }
+          }
+        }, { passive: true });
+        
+        // Touch support for mobile devices
+        document.addEventListener('touchend', (e) => {
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target && gameAudio) {
+            gameAudio.playSound('click');
+          }
+        }, { passive: true });
+        
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        
+        function monitorPerformance() {
+          frameCount++;
+          const currentTime = performance.now();
+          
+          if (currentTime - lastTime >= 1000) {
+            const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+            if (fps < 30) {
+              // Reduce trails for better performance
+              maxTrails = Math.max(3, maxTrails - 1);
+            }
+            frameCount = 0;
+            lastTime = currentTime;
+          }
+        }
+        
+        // Initialize with optimizations
+        cursor.style.willChange = 'transform';
+        updateCursor();
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+          if (animationId) cancelAnimationFrame(animationId);
+          trails.forEach(trail => {
+            if (trail?.parentNode) trail.parentNode.removeChild(trail);
+          });
+          trails.clear();
+        });
+      });
+    </script>
     </script>
   </body>
 </html>
