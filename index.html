@@ -30,12 +30,33 @@
     <link rel="icon" href="assets/android-chrome-512x512.png" type="image/x-icon"> 
   </head>
   <body>
+    <!-- Custom Futuristic Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Audio System for UI Sounds -->
+    <div id="audioSystem" style="display: none;"></div>
+    
     <!-- Scroll Progress Bar -->
 <div id="scroll-bar" class="fixed right-6 top-1/2 transform -translate-y-1/2 h-64 w-1.5 bg-gray-700 rounded-full z-50 hidden sm:block">
   <div id="scroll-indicator" class="bg-[#1DCD9F] h-0 w-full rounded-full transition-all duration-300 ease-out shadow-md shadow-[#1DCD9F]"></div>
 </div>
     <!-- Loading Animation -->
-<div id="loading">
+<div id="loading" class="futuristic-bg">
+  <!-- Futuristic Loading Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="circuit-lines">
+    <div class="circuit-line line-1"></div>
+    <div class="circuit-line line-2"></div>
+  </div>
+  <div class="scanlines"></div>
+  
   <div class="loading-text" id="name-loader">
     <span data-text="F">F</span>
     <span data-text="A">A</span>
@@ -47,487 +68,676 @@
 </div>
 
     <!-- Hero Section -->
-<section class="position-relative container-fluid min-vh-100 d-flex justify-content-center align-items-center text-white overflow-hidden" style="background-color: #000000">
-  <!-- Hero Particle Background -->
-  <div id="particles-hero" class="position-absolute w-100 h-100 top-0 start-0" style="z-index: 0"></div>
+<section class="position-relative container-fluid min-vh-100 d-flex justify-content-center align-items-center text-white overflow-hidden futuristic-bg">
+  <!-- Futuristic Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="circuit-lines">
+    <div class="circuit-line line-1"></div>
+    <div class="circuit-line line-2"></div>
+    <div class="circuit-line line-3"></div>
+    <div class="circuit-line line-4"></div>
+  </div>
+  <!-- Animated Scanlines -->
+  <div class="scanlines"></div>
 
   <!-- Hero Content -->
-  <div class="container text-center position-relative" style="z-index: 1">
-    <h1 class="display-4 fw-bold">
-      <span class="text-white me-2">Hi, I'm</span>
-      <button class="button" data-text="Farman">
-        <span class="actual-text">&nbsp;Farman&nbsp;</span>
-        <span aria-hidden="true" class="hover-text">&nbsp;Farman ALy&nbsp;</span>
-      </button>
-    </h1>
-    <p class="lead text-light mt-3">
-     Turning raw ideas into backend engines—secure, scalable, and always humming beneath digital experiences.
-    </p>
-    <a href="#projects" class="shadow__btn mt-4">View Projects</a>
+  <div class="container text-center position-relative futuristic-hero" style="z-index: 1">
+    <!-- Glitch Effect Text -->
+    <div class="glitch-wrapper">
+      <div class="glitch" data-text="FARMAN ALY"> FARMAN ALY</div>
+    </div>
+    
+    <!-- Dynamic Programming Quotes -->
+    <div class="code-quote-container">
+      <div class="quote-wrapper">
+        <span class="quote-mark">"</span>
+        <div class="quote-text" id="quote-text">Code is poetry written for machines</div>
+        <span class="quote-mark">"</span>
+      </div>
+      <div class="quote-author" id="quote-author">- Software Philosophy</div>
+    </div>
+    
+    <!-- Tech Description -->
+    <div class="hero-description">
+      <div class="cyber-line"></div>
+      <p class="futuristic-lead">
+        Architecting scalable solutions where <span class="tech-accent">innovation</span> meets 
+        <span class="tech-accent">functionality</span>
+        <br>
+        <span class="code-comment">// Transforming ideas into digital reality</span>
+      </p>
+      <div class="cyber-line"></div>
+    </div>
+    
+    <!-- Futuristic CTA Buttons -->
+    <div class="hero-actions">
+      <a href="#projects" class="cyber-btn primary">
+        <span class="btn-text">EXPLORE_PROJECTS()</span>
+        <div class="btn-glitch"></div>
+      </a>
+      <a href="#contact" class="cyber-btn secondary">
+        <span class="btn-text">INIT_CONTACT</span>
+        <div class="btn-scan"></div>
+      </a>
+    </div>
+    
+    <!-- Terminal-like Status -->
+    <div class="terminal-status">
+      <div class="status-line">
+        <span class="status-green">●</span> Systems Online
+        <span class="status-blue">●</span> Ready for Input
+        <span class="status-yellow">●</span> Awaiting Connection...
+      </div>
+    </div>
   </div>
 </section>
 
     <!-- About Me Section -->
-<section id="about" class="bg-black text-white py-20 px-6">
-  <div
-    class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-10 px-4"
-  >
-    <!-- Profile Image -->
-    <div
-      class="flex-shrink-0 w-64 h-64 rounded-xl overflow-hidden shadow-lg grayscale hover:grayscale-0 transition duration-500"
-      id="about-img"
-    >
-      <img
-        src="./assets/profile.jpg"
-        alt="Farman ALy"
-        class="w-full h-full object-cover"
-      />
+<section id="about" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="circuit-lines">
+    <div class="circuit-line line-1"></div>
+    <div class="circuit-line line-2"></div>
+    <div class="circuit-line line-3"></div>
+    <div class="circuit-line line-4"></div>
+  </div>
+  <div class="scanlines"></div>
+  
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    
+    <!-- Section Title -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-[#00ff88] mb-4">About Me</h2>
+      <p class="text-gray-400 text-lg">Software Engineer & Full-Stack Developer</p>
     </div>
 
-    <!-- Text Content -->
-    <div class="max-w-2xl" id="about-text">
-      <h2 class="text-3xl md:text-4xl font-semibold leading-snug mb-4">
-        I'm <span class="text-[#1DCD9F] font-bold">Farman ALy</span>, a
-        Full Stack Developer building creative and scalable web
-        applications.
-      </h2>
+    <!-- Profile Section: Image Left, Content Right -->
+    <div class="flex flex-col md:flex-row items-start justify-center gap-12 mb-16">
+      <!-- Profile Image -->
+      <div class="profile-frame">
+        <div class="cyber-border"></div>
+        <div class="profile-container w-64 h-64 rounded-xl overflow-hidden" id="about-img">
+          <img
+            src="./assets/profile.jpg"
+            alt="Farman Ali"
+            class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-500"
+          />
+          <div class="scan-overlay"></div>
+        </div>
+      </div>
 
-  <p class="text-gray-300 text-lg leading-relaxed mb-6">
-  I’m a <span class="text-[#1DCD9F] font-bold">Full Stack Software Engineer (LAMP Stack)</span> with 4+ years of experience building 
-  <span class="font-semibold">scalable, secure, and high-performance web applications</span>. 
-  My expertise lies in designing robust backend systems using 
-  <span class="text-[#1DCD9F] font-bold">PHP, Laravel, Lumen, MySQL, and PL/SQL</span>, 
-  while also crafting seamless frontend experiences with 
-  <span class="text-[#1DCD9F] font-bold">React</span> and 
-  <span class="text-[#1DCD9F] font-bold">JavaScript (ES6+)</span>.  
-  <!-- I specialize in <span class="font-semibold">RESTful API design, database optimization, and clean architecture</span>—delivering end-to-end solutions tailored for performance and growth. -->
-</p>
-
-<p class="text-gray-300 text-lg leading-relaxed mb-6">
-  I’m passionate about creating impactful digital experiences with technologies like 
-  <span class="text-[#1DCD9F] font-bold">Laravel</span>, 
-  <span class="text-[#1DCD9F] font-bold">React</span>, 
-  <span class="text-[#1DCD9F] font-bold">Node.js</span>, 
-  <span class="text-[#1DCD9F] font-bold">MongoDB</span>, and 
-  <span class="text-[#1DCD9F] font-bold">SQL</span>.  
-  I enjoy solving complex problems, optimizing system performance, and writing 
-  <span class="font-semibold">clean, maintainable, well-documented code</span>.  
-  Beyond coding, I explore <span class="font-semibold">emerging tech trends, system design, and productivity tools</span> that fuel innovation.
-</p>
-
-
-      <!-- Social Icons -->
-      <ul class="example-2">
-        <li class="icon-content">
-          <a
-            href="https://x.com/engr_farmanali"
-            aria-label="X"
-            data-social="X"
-            target="_blank"
-          >
-            <div class="filled"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
-         <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-       </svg>
-          </a>
-          <div class="tooltip">X</div>
-        </li>
-        <li class="icon-content">
-          <a
-            href="https://www.linkedin.com/in/farmanali007/"
-            aria-label="LinkedIn"
-            data-social="linkedin"
-            target="_blank"
-          >
-            <div class="filled"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="480" height="480" viewBox="0 0 48 48">
-              <path fill="#0288d1" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path><path fill="#fff" d="M14 19H18V34H14zM15.988 17h-.022C14.772 17 14 16.11 14 14.999 14 13.864 14.796 13 16.011 13c1.217 0 1.966.864 1.989 1.999C18 16.11 17.228 17 15.988 17zM35 24.5c0-3.038-2.462-5.5-5.5-5.5-1.862 0-3.505.928-4.5 2.344V19h-4v15h4v-8c0-1.657 1.343-3 3-3s3 1.343 3 3v8h4C35 34 35 24.921 35 24.5z"></path>
-              </svg>
-          </a>
-          <div class="tooltip">LinkedIn</div>
-        </li>
-        <li class="icon-content">
-          <a
-            href="mailto:farmanali1588594@gmail.com"
-            aria-label="Email"
-            data-social="email"
-          >
-            <div class="filled"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="240" height="240" viewBox="0 0 48 48">
-              <path fill="#e0e0e0" d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z"></path><path fill="#d9d9d9" d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z"></path><path fill="#eee" d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z"></path><path fill="#e0e0e0" d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z"></path><path fill="#ca3737" d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z"></path><path fill="#f5f5f5" d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z"></path><path fill="#e84f4b" d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z"></path>
-              </svg>
-          </a>
-          <div class="tooltip">Gmail</div>
-        </li>
-  <!-- GitHub -->
-<li class="icon-content">
-  <a
-    href="https://github.com/farmanali007"
-    aria-label="GitHub"
-    data-social="github"
-    target="_blank"
-  >
-    <div class="filled"></div>
-    <!-- GitHub Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 24 24" fill="#18193f">
-      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.43 7.86 10.96.58.1.79-.25.79-.56 0-.28-.01-1.04-.02-2.05-3.2.69-3.87-1.54-3.87-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.73.08-.72.08-.72 1.18.08 1.81 1.21 1.81 1.21 1.04 1.79 2.72 1.27 3.39.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.2-3.07-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.17a11.06 11.06 0 0 1 5.79 0c2.21-1.48 3.18-1.17 3.18-1.17.63 1.57.23 2.73.11 3.02.75.8 1.2 1.82 1.2 3.07 0 4.41-2.69 5.38-5.25 5.67.42.37.8 1.1.8 2.22 0 1.6-.01 2.88-.01 3.27 0 .31.21.66.8.55A10.5 10.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
-    </svg>
-  </a>
-  <div class="tooltip">GitHub</div>
-</li>
-
-<!-- Laracasts -->
-<li class="icon-content">
-  <a
-    href="https://laracasts.com/@farman_ali007"
-    aria-label="Laracasts"
-    data-social="laracasts"
-    target="_blank"
-  >
-    <div class="filled"></div>
-    <!-- Laracasts Icon -->
- <!--
-tags: [framework, software, php, modular, application, building, system]
-category: Brand
-unicode: "f34b"
-version: "1.88"
--->
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="32"
-  height="32"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#000000"
-  stroke-width="1"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M3 17l8 5l7 -4v-8l-4 -2.5l4 -2.5l4 2.5v4l-11 6.5l-4 -2.5v-7.5l-4 -2.5z" />
-  <path d="M11 18v4" />
-  <path d="M7 15.5l7 -4" />
-  <path d="M14 7.5v4" />
-  <path d="M14 11.5l4 2.5" />
-  <path d="M11 13v-7.5l-4 -2.5l-4 2.5" />
-  <path d="M7 8l4 -2.5" />
-  <path d="M18 10l4 -2.5" />
-</svg>
-
-  </a>
-  <div class="tooltip">Laracasts</div>
-</li>
-
-<!-- LeetCode -->
-<li class="icon-content">
-  <a
-    href="https://leetcode.com/u/farmanaly007/"
-    aria-label="LeetCode"
-    data-social="leetcode"
-    target="_blank"
-  >
-    <div class="filled"></div>
-    <!-- LeetCode Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 48 48">
-      <path fill="#FFA116" d="M20.16 34.08 12 24l8.16-10.08-2.88-2.4L6 24l11.28 12.48 2.88-2.4Zm5.76 2.64L19.44 24l6.48-12.72-3.36-1.68L12.48 24l10.08 14.4 3.36-1.68Zm2.64 4.8 3.36 1.68L35.52 24l-3.36-1.68L28.56 24l-.96 1.68 2.96 5.28-2.96 5.28Zm5.28-21.6L40.8 24l-6.96 4.08 1.92 3.36L46.08 24l-10.8-7.44-1.92 3.36Z"/>
-    </svg>
-  </a>
-  <div class="tooltip">LeetCode</div>
-</li>
-
-      </ul>
-
-      <!-- Download Resume Button -->
-<!-- Center wrapper (optional) -->
-<div style="display:flex;justify-content:center;align-items:center;margin-top:2rem;gap:50px;">
-  <a
-    href="https://drive.google.com/file/d/1yunlp8cAa8jbQ1S7S_bWVS4gCR5RuYmS/view?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="resume-btn"
-  >
-    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v9.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 8.707 11.293L11 13.586V4a1 1 0 0 1 1-1ZM5 18a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5Z"/>
-    </svg>
-    <span>View Resume</span>
-  </a>
-</div>
-
-
-
+      <!-- Bio Content -->
+      <div class="bio-content">
+        <div class="name-section">
+          <h2 class="name-title">Farman Ali</h2>
+          <p class="role-title">Software Engineer</p>
+        </div>
+        
+        <div class="bio-section">
+          <p class="bio-text">
+            Crafting digital experiences with 4+ years of expertise in full-stack development. 
+            Specializing in <span class="highlight">scalable architectures</span> and 
+            <span class="highlight">modern web technologies</span> that drive innovation 
+            and deliver exceptional user experiences.
+          </p>
+          
+          <p class="bio-text">
+            My approach combines <span class="highlight">traditional engineering</span> 
+            with <span class="highlight">cutting-edge tools</span> to build solutions 
+            that are both robust and future-ready.
+          </p>
+        </div>
+      </div>
     </div>
+
+    <!-- Social Media Links - Centered -->
+    <div class="text-center mb-12">
+      <div class="inline-flex flex-wrap justify-center gap-6">
+        <a href="https://x.com/engr_farmanali" class="social-link-simple" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+          </svg>
+          <span>Twitter</span>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/farmanali007/" class="social-link-simple" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        
+        <a href="mailto:farmanali1588594@gmail.com" class="social-link-simple">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+          </svg>
+          <span>Email</span>
+        </a>
+        
+        <a href="https://github.com/farmanali007" class="social-link-simple" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Download Resume Button - Centered -->
+    <div class="text-center">
+      <a
+        href="https://drive.google.com/file/d/1yunlp8cAa8jbQ1S7S_bWVS4gCR5RuYmS/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="resume-btn"
+      >
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v9.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 0 1 8.707 11.293L11 13.586V4a1 1 0 0 1 1-1ZM5 18a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5Z"/>
+        </svg>
+        <span>View Resume</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- TECH STACK SECTION -->
-<section id="tech-stack" class="bg-black text-white py-20 px-6 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto flex flex-col gap-20">
 
-        <!-- BACKEND -->
+
+<!-- NEW TECH STACK SECTION WITH FUTURISTIC BACKGROUND -->
+<section id="tech-stack" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="circuit-lines">
+    <div class="circuit-line line-1"></div>
+    <div class="circuit-line line-2"></div>
+    <div class="circuit-line line-3"></div>
+    <div class="circuit-line line-4"></div>
+  </div>
+  <div class="scanlines"></div>
+  
+  <div class="max-w-7xl mx-auto flex flex-col gap-20 relative z-10">
+    
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-[#00ff88] mb-4">Tech Stack</h2>
+      <p class="text-gray-400 text-lg">Technologies & Tools I Use</p>
+    </div>
+
+    <!-- BACKEND -->
     <div class="flex md:flex-row flex-col gap-8 items-start" id="backend">
       <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
-        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#backend').scrollIntoView({behavior: 'smooth'})">BACKEND</div>
+        <div class="category-label cursor-pointer hover:text-[#00ff88] transition">BACKEND</div>
       </div>
-      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         <!-- Laravel -->
-      <div class="flex items-center gap-2">
-        <img alt="Laravel" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" class="w-6 h-6 bg-white rounded p-0.5">
-        <span class="text-lg">Laravel</span>
-      </div>
-    <!-- PHP -->
-      <div class="flex items-center gap-2">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-6 h-6">
-      <span class="text-lg">PHP</span>
-    </div>
-    <!-- C++ -->
-         <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-6 h-6"><span class="text-lg">C++</span></div>
-    <!-- Linux -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-6 h-6">
-          <span class="text-lg">Linux</span>
+        <div class="tech-item">
+          <img alt="Laravel" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" class="w-8 h-8">
+          <span>Laravel</span>
         </div>
-        <!-- Apache -->
-      <div class="flex items-center gap-2">
-        <img alt="Nginx" src="./assets/apache.jpg" class="w-6 h-6 bg-white rounded p-0.5">
-        <span class="text-lg">Apache</span>
-      </div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-6 h-6"><span class="text-lg">Node.js</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-6 h-6 bg-white rounded-full p-0.5"><span class="text-lg">Next.js</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-6 h-6 bg-white rounded p-0.5"><span class="text-lg">Express.js</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactrouter/reactrouter-original.svg" class="w-6 h-6"><span class="text-lg">React Router</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" class="w-6 h-6"><span class="text-lg">Nodemon</span></div>
+        <!-- PHP -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-8 h-8">
+          <span>PHP</span>
+        </div>
+        <!-- C++ -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-8 h-8">
+          <span>C++</span>
+        </div>
+        <!-- Node.js -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-8 h-8">
+          <span>Node.js</span>
+        </div>
+        <!-- Express.js -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-8 h-8 bg-white rounded p-1">
+          <span>Express.js</span>
+        </div>
+        <!-- Next.js -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-8 h-8 bg-white rounded-full p-1">
+          <span>Next.js</span>
+        </div>
+        <!-- C -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-8 h-8">
+          <span>C</span>
+        </div>
+        <!-- Django -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" class="w-8 h-8 bg-white rounded p-1">
+          <span>Django</span>
+        </div>
       </div>
     </div>
 
     <!-- FRONTEND -->
     <div class="flex md:flex-row flex-col gap-8 items-start" id="frontend">
-      <!-- Label -->
       <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
-        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#frontend').scrollIntoView({behavior: 'smooth'})">FRONTEND</div>
+        <div class="category-label cursor-pointer hover:text-[#00ff88] transition">FRONTEND</div>
       </div>
-
-      <!-- Tech Grid -->
-      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
-        <!-- Tech Icons Here -->
-        <div class="flex items-center gap-2 "><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-6 h-6"><span class="text-lg">Javascript</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-6 h-6"><span class="text-lg">React</span></div>
-        
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="w-6 h-6"/>
-         <span class="text-lg">Tailwind CSS</span></div>
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"  class="w-6 h-6"/><span class="text-lg">HTML</span></div>
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="w-6 h-6" />
-         <span class="text-lg">CSS</span></div>
-        <div class="flex items-center gap-2">
-          <i class="fas fa-wave-square"></i>
-          <span class="text-lg">GSAP</span>
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <!-- JavaScript -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-8 h-8">
+          <span>JavaScript</span>
         </div>
-        <div class="flex items-center gap-2">
-          <img src="./assets/framer-logo.png"
-         class="w-6 h-6" id="framer"><span class="text-lg">Framer Motion</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-6 h-6"><span class="text-lg">C</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-6 h-6"><span class="text-lg">Bootstrap</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6"><span class="text-lg">Python</span></div>
+        <!-- React -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-8 h-8">
+          <span>React</span>
+        </div>
+        <!-- HTML -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="w-8 h-8">
+          <span>HTML</span>
+        </div>
+        <!-- CSS -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="w-8 h-8">
+          <span>CSS</span>
+        </div>
+        <!-- Tailwind CSS -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="w-8 h-8">
+          <span>Tailwind CSS</span>
+        </div>
+        <!-- Bootstrap -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-8 h-8">
+          <span>Bootstrap</span>
+        </div>
+        <!-- Python -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8">
+          <span>Python</span>
+        </div>
+        <!-- Vue.js -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="w-8 h-8">
+          <span>Vue.js</span>
+        </div>
       </div>
     </div>
 
     <!-- DATABASE -->
     <div class="flex md:flex-row flex-col gap-8 items-start" id="database">
       <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
-        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#database').scrollIntoView({behavior: 'smooth'})">DATABASE</div>
+        <div class="category-label cursor-pointer hover:text-[#00ff88] transition">DATABASE</div>
       </div>
-      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         <!-- MySQL -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-6 h-6">
-          <span class="text-lg">MySQL</span>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-8 h-8">
+          <span>MySQL</span>
         </div>
-           <!-- PostgreSQL -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-6 h-6">
-          <span class="text-lg">PostgreSQL</span>
+        <!-- PostgreSQL -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-8 h-8">
+          <span>PostgreSQL</span>
         </div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" class="w-6 h-6"><span class="text-lg">Mongoose</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-6 h-6"><span class="text-lg">MongoDB</span></div>
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" class="w-6 h-6"><span class="text-lg">Oracle</span></div>
-        
+        <!-- MongoDB -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-8 h-8">
+          <span>MongoDB</span>
+        </div>
+        <!-- Redis -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" class="w-8 h-8">
+          <span>Redis</span>
+        </div>
+        <!-- Oracle -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" class="w-8 h-8">
+          <span>Oracle</span>
+        </div>
+        <!-- SQLite -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" class="w-8 h-8">
+          <span>SQLite</span>
+        </div>
+        <!-- Firebase -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-8 h-8">
+          <span>Firebase</span>
+        </div>
+        <!-- Elasticsearch -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" class="w-8 h-8">
+          <span>Elasticsearch</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI DEVELOPMENT TOOLS -->
+    <div class="flex md:flex-row flex-col gap-8 items-start" id="ai-tools">
+      <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
+        <div class="category-label cursor-pointer hover:text-[#ff6b6b] transition">AI TOOLS</div>
+      </div>
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <!-- ChatGPT -->
+        <div class="tech-item ai-tool">
+          <img alt="ChatGPT" src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" class="w-8 h-8">
+          <span>ChatGPT</span>
+        </div>
+        <!-- Claude -->
+        <div class="tech-item ai-tool">
+          <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm">C</div>
+          <span>Claude</span>
+        </div>
+        <!-- GitHub Copilot -->
+        <div class="tech-item ai-tool">
+          <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c6.627 0 12 5.373 12 12 0 5.302-3.438 9.8-8.205 11.387-.6.113-.82-.258-.82-.577 0-.285.01-1.04.015-2.04 3.338.724 4.042-1.61 4.042-1.61.546-1.387 1.333-1.756 1.333-1.756 1.089-.745-.083-.729-.083-.729-1.205.084-1.839 1.237-1.839 1.237-1.07 1.834-2.807 1.304-3.492.997-.107-.775-.418-1.305-.762-1.604 2.665-.305 5.467-1.334 5.467-5.931 0-1.311-.469-2.381-1.236-3.221.124-.303.535-1.524-.117-3.176 0 0-1.008-.322-3.301 1.23A11.509 11.509 0 0112 5.803c-1.02.005-2.047.138-3.006.404-2.291-1.552-3.297-1.23-3.297-1.23-.653 1.653-.242 2.874-.118 3.176-.77.84-1.237 1.91-1.237 3.221 0 4.609 2.807 5.624 5.479 5.921-.344.296-.653.873-.653 1.760 0 1.271-.01 2.296-.01 2.608 0 .322-.216.694-.825.576C3.44 21.796 0 17.3 0 12 0 5.373 5.373 0 12 0z"/>
+            </svg>
+          </div>
+          <span>GitHub Copilot</span>
+        </div>
+        <!-- Cursor IDE -->
+        <div class="tech-item ai-tool">
+          <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm">⚡</div>
+          <span>Cursor IDE</span>
+        </div>
+        <!-- TensorFlow -->
+        <div class="tech-item ai-tool">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-8 h-8">
+          <span>TensorFlow</span>
+        </div>
+        <!-- Gemini -->
+        <div class="tech-item ai-tool">
+          <img alt="Gemini" src="https://seeklogo.com/images/G/google-gemini-logo-A5787B2669-seeklogo.com.png" class="w-8 h-8">
+          <span>Gemini</span>
+        </div>
+        <!-- Perplexity AI -->
+        <div class="tech-item ai-tool">
+          <div class="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold text-sm">⊗</div>
+          <span>Perplexity AI</span>
+        </div>
+        <!-- DeepSeek -->
+        <div class="tech-item ai-tool">
+          <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center text-white font-bold text-sm">DS</div>
+          <span>DeepSeek</span>
+        </div>
       </div>
     </div>
 
     <!-- TOOLS -->
     <div class="flex md:flex-row flex-col gap-8 items-start" id="tools">
       <div class="w-full md:w-1/5 text-gray-400 text-lg font-bold sticky top-18">
-        <div class="category-label cursor-pointer hover:text-white transition" onclick="document.querySelector('#tools').scrollIntoView({behavior: 'smooth'})">TOOLS</div>
+        <div class="category-label cursor-pointer hover:text-[#00ff88] transition">TOOLS</div>
       </div>
-      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 reveal-section">
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-6 h-6"><span class="text-lg">Git</span></div>
-        <div class="flex items-center gap-2"><img src="./assets/github-logo.png" class="w-6 h-6"><span class="text-lg">GitHub</span></div>
- 
-        <!-- AWS -->
-        <div class="flex items-center gap-2"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-6 h-6"><span class="text-lg">AWS</span></div>
-        <!-- Azure -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" class="w-6 h-6">
-          <span class="text-lg">Azure</span>
-        </div>
-
-        <!-- Google Cloud -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" class="w-6 h-6">
-          <span class="text-lg">Google Cloud</span>
-        </div>
-
-        <!-- Postman -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="w-6 h-6">
-          <span class="text-lg">Postman</span>
-        </div>
-
-        <!-- VS Code -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-6 h-6">
-          <span class="text-lg">VS Code</span>
-        </div>
-
-        <!-- GitHub -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6">
-          <span class="text-lg">GitHub</span>
-        </div>
-
-        <!-- GitLab -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" class="w-6 h-6">
-          <span class="text-lg">GitLab</span>
-        </div>
-
+      <div class="w-full md:w-4/5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         <!-- Git -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-6 h-6">
-          <span class="text-lg">Git</span>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-8 h-8">
+          <span>Git</span>
         </div>
-
+        <!-- GitHub -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-8 h-8 bg-white rounded-full p-1">
+          <span>GitHub</span>
+        </div>
+        <!-- VS Code -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" class="w-8 h-8">
+          <span>VS Code</span>
+        </div>
         <!-- Docker -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-6 h-6">
-          <span class="text-lg">Docker</span>
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-8 h-8">
+          <span>Docker</span>
         </div>
-
-        <!-- Kubernetes -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="w-6 h-6">
-          <span class="text-lg">Kubernetes</span>
+        <!-- AWS -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-8 h-8 bg-white rounded p-1">
+          <span>AWS</span>
         </div>
-
-        <!-- MongoDB -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-6 h-6">
-          <span class="text-lg">MongoDB</span>
+        <!-- Azure -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" class="w-8 h-8">
+          <span>Azure</span>
         </div>
-
-        <!-- Redis -->
-        <div class="flex items-center gap-2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" class="w-6 h-6">
-          <span class="text-lg">Redis</span>
+        <!-- Postman -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="w-8 h-8">
+          <span>Postman</span>
         </div>
-<!-- ChatGPT -->
-<div class="flex items-center gap-2">
-  <img alt="ChatGPT" src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" class="w-6 h-6">
-  <span class="text-lg">ChatGPT</span>
-</div>
-
+        <!-- Linux -->
+        <div class="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="w-8 h-8">
+          <span>Linux</span>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
-<!-- JOURNEY SECTION -->
+<!-- OLD JOURNEY SECTION - COMMENTED OUT -->
+<!--
 <section id="journey" class="bg-black text-white py-20 px-6">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold mb-16 text-center text-[#1DCD9F]">My Journey</h2>
-    
     <div class="relative">
-      <!-- Vertical Line -->
       <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#1DCD9F]"></div>
+      [Previous journey content commented out for brevity]
+    </div>
+  </div>
+</section>
+-->
 
-      <!-- Timeline Card 1 - Right -->
-      <div class="relative mb-16 md:mb-24 md:flex justify-end">
-        <div class="hidden md:block absolute w-4 h-4 bg-[#1DCD9F] rounded-full left-1/2 transform -translate-x-1/2 top-4 z-10"></div>
-        <div class="md:w-1/2"></div>
-        <div class="md:w-1/2 md:pl-10">
-          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card">
-            <h3 class="text-xl font-semibold text-[#1DCD9F]">Senior Software Engineer <span class="text-sm text-gray-400">(Jan 2023 – Present )</span></h3>
-            <span class="text-sm text-gray-400">Novapex Software Technologies – Lahore, Pakistan <br>Full-time + (On-site}</span>
-            <!-- <p class="mt-2 text-gray-300">Leading development of scalable backend systems with Laravel, PHP, SQL, PL/SQL, and ORM.
-              Designing optimized database-driven architectures with stored procedures, indexing, and performance tuning.
-              Implementing Redis caching, WebSockets, and Pusher for real-time, high-performance applications.
-              Managing VPS hosting and AWS cloud services, including deployment pipelines and cloud database procedures.
-              Mentoring junior developers, conducting code reviews, and establishing engineering best practices.
-              Collaborating on full-stack features, occasionally integrating React.js for seamless user experiences.
-              Driving end-to-end delivery of business-critical projects, ensuring performance, scalability, and reliability.</p> -->
-              <ul class="mt-2 text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
-                <li>Leading development of scalable backend systems with <span class="text-[#1DCD9F] font-semibold">Laravel</span>, <span class="text-[#1DCD9F] font-semibold">PHP</span>, <span class="text-[#1DCD9F] font-semibold">SQL/PLSQL</span>, and <span class="text-[#1DCD9F] font-semibold">ORM</span>.</li>
-                <li>Designing optimized <span class="text-[#1DCD9F] font-semibold">database-driven architectures</span> with stored procedures, indexing, and performance tuning.</li>
-                <li>Implementing <span class="text-[#1DCD9F] font-semibold">Redis caching</span>, <span class="text-[#1DCD9F] font-semibold">WebSockets</span>, and <span class="text-[#1DCD9F] font-semibold">Pusher</span> for real-time, high-performance applications.</li>
-                <li>Managing <span class="text-[#1DCD9F] font-semibold">VPS hosting</span> and <span class="text-[#1DCD9F] font-semibold">AWS cloud services</span>, including deployment pipelines and cloud database procedures.</li>
-                <li>Collaborating on full-stack features, occasionally integrating <span class="text-[#1DCD9F] font-semibold">React.js</span> for seamless user experiences.</li>
-</ul>
+<!-- NEW FUTURISTIC JOURNEY SECTION -->
+<section id="journey" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="circuit-lines">
+    <div class="circuit-line line-1"></div>
+    <div class="circuit-line line-2"></div>
+    <div class="circuit-line line-3"></div>
+    <div class="circuit-line line-4"></div>
+  </div>
+  <div class="scanlines"></div>
+  
+  <div class="max-w-6xl mx-auto relative z-20">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="blog-title-container">
+        <h2 class="blog-title">CAREER_PATH.LOG</h2>
+      </div>
+      <div class="journey-subtitle">Professional Development Timeline</div>
+    </div>
 
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+      <!-- Cyber Timeline Line -->
+      <div class="cyber-timeline"></div>
+
+      <!-- Journey Card 1 - Senior Software Engineer -->
+      <div class="journey-milestone right-side">
+        <div class="milestone-marker">
+          <div class="marker-core"></div>
+          <div class="marker-glow"></div>
+        </div>
+        <div class="journey-card-modern">
+          <div class="card-header">
+            <div class="role-badge senior">SENIOR</div>
+            <div class="status-active">ACTIVE</div>
+          </div>
+          <h3 class="role-title">Software Engineer</h3>
+          <div class="timeline-meta">
+            <span class="duration">Jan 2023 – Present</span>
+            <span class="company">Novapex Software Technologies</span>
+          </div>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <div class="achievement-icon">🚀</div>
+              <span>Scalable Backend Systems</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">⚡</div>
+              <span>Real-time Applications</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">☁️</div>
+              <span>AWS Cloud Services</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🔧</div>
+              <span>Performance Optimization</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Timeline Card 2 - Left -->
-      <div class="relative mb-16 md:mb-24 md:flex justify-start">
-        <div class="hidden md:block absolute w-4 h-4 bg-[#1DCD9F] rounded-full left-1/2 transform -translate-x-1/2 top-4 z-10"></div>
-        <div class="md:w-1/2 md:pr-10">
-          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card">
-            <h3 class="text-xl font-semibold text-[#1DCD9F]">Associate Software Engineer <span class="text-sm text-gray-400">(Oct 2021 – Jan 2023)</span></h3>
-                        <span class="text-sm text-gray-400">Novapex Software Technologies – Lahore, Pakistan <br>Full-time + (On-site}</span>
-              <ul class="mt-2 text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
-                <li>Built robust backend features with <span class="text-[#1DCD9F] font-semibold">Laravel</span>, <span class="text-[#1DCD9F] font-semibold">PHP</span>, <span class="text-[#1DCD9F] font-semibold">JavaScript</span>, <span class="text-[#1DCD9F] font-semibold">AJAX</span>, and <span class="text-[#1DCD9F] font-semibold">MySQL</span>.</li>
-                <li>Applied <span class="text-[#1DCD9F] font-semibold">object-oriented programming (OOP)</span> principles to write reusable and maintainable code.</li>
-                <li>Contributed to frontend modules using <span class="text-[#1DCD9F] font-semibold">React.js</span> and vanilla JavaScript to enhance user-facing functionality.</li>
-                <li>Integrated APIs, optimized performance, and supported production deployments.</li>
-              </ul>
+      <!-- Journey Card 2 - Associate Software Engineer -->
+      <div class="journey-milestone left-side">
+        <div class="milestone-marker">
+          <div class="marker-core"></div>
+          <div class="marker-glow"></div>
+        </div>
+        <div class="journey-card-modern">
+          <div class="card-header">
+            <div class="role-badge associate">ASSOCIATE</div>
+            <div class="status-completed">COMPLETED</div>
+          </div>
+          <h3 class="role-title">Software Engineer</h3>
+          <div class="timeline-meta">
+            <span class="duration">Oct 2021 – Jan 2023</span>
+            <span class="company">Novapex Software Technologies</span>
+          </div>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <div class="achievement-icon">💻</div>
+              <span>Full-Stack Development</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🔗</div>
+              <span>API Integration</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">⚛️</div>
+              <span>React.js Frontend</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🎯</div>
+              <span>OOP Principles</span>
+            </div>
           </div>
         </div>
-        <div class="md:w-1/2"></div>
       </div>
 
-      <!-- Timeline Card 3 - Right -->
-      <div class="relative mb-16 md:mb-24 md:flex justify-end">
-        <div class="hidden md:block absolute w-4 h-4 bg-[#1DCD9F] rounded-full left-1/2 transform -translate-x-1/2 top-4 z-10"></div>
-        <div class="md:w-1/2"></div>
-        <div class="md:w-1/2 md:pl-10">
-          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card">
-            <h3 class="text-xl font-semibold text-[#1DCD9F]">Software Engineering Intern <span class="text-sm text-gray-400">(Aug 2021 – Oct 2021)</span></h3>
-            <span class="text-sm text-gray-400">Novapex Software Technologies – Lahore, Pakistan <br>Full-time + (On-site}</span>
-           <ul class="mt-2 text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
-            <li>Gained hands-on experience in <span class="text-[#1DCD9F] font-semibold">Laravel</span>, <span class="text-[#1DCD9F] font-semibold">PHP</span>, and <span class="text-[#1DCD9F] font-semibold">SQL</span> for web development fundamentals.</li>
-            <li>Learned professional workflows with <span class="text-[#1DCD9F] font-semibold">Git</span> version control and collaborative coding practices.</li>
-            <li>Contributed to small tasks and bug fixes, including minor frontend enhancements with <span class="text-[#1DCD9F] font-semibold">React.js</span>.</li>
-           </ul>
+      <!-- Journey Card 3 - Software Engineering Intern -->
+      <div class="journey-milestone right-side">
+        <div class="milestone-marker">
+          <div class="marker-core"></div>
+          <div class="marker-glow"></div>
+        </div>
+        <div class="journey-card-modern">
+          <div class="card-header">
+            <div class="role-badge intern">INTERN</div>
+            <div class="status-completed">COMPLETED</div>
+          </div>
+          <h3 class="role-title">Software Engineering Intern</h3>
+          <div class="timeline-meta">
+            <span class="duration">Aug 2021 – Oct 2021</span>
+            <span class="company">Novapex Software Technologies</span>
+          </div>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <div class="achievement-icon">🌱</div>
+              <span>Laravel Fundamentals</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🔄</div>
+              <span>Git Version Control</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🛠️</div>
+              <span>Bug Fixes & Tasks</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">📚</div>
+              <span>Professional Workflows</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Timeline Card 4 - Left -->
-      <div class="relative mb-16 md:mb-24 md:flex justify-start">
-        <div class="hidden md:block absolute w-4 h-4 bg-[#1DCD9F] rounded-full left-1/2 transform -translate-x-1/2 top-4 z-10"></div>
-        <div class="md:w-1/2 md:pr-10">
-          <div class="bg-[#111] p-6 rounded-2xl border border-[#1DCD9F] shadow-lg journey-card">
-            <h3 class="text-xl font-semibold text-[#1DCD9F]">Software Engineering  <span class="text-sm text-gray-400">2017 - 2021</span></h3>
-            <span class="text-sm text-gray-400">Virtual University of Pakistan, Lahore</span>
-          <ul class="mt-2 text-gray-300 space-y-2 list-disc list-inside leading-relaxed">
-            <li><span class="text-[#1DCD9F] font-semibold">Bachelor’s in Software Engineering</span>, Virtual University of Pakistan.</li>
-            <li>Graduated with <span class="text-[#1DCD9F] font-semibold">Grade A</span>, specializing in Web Engineering and Software Development.</li>
-            <li>Built strong foundations in <span class="text-[#1DCD9F] font-semibold">Data Structures</span>, <span class="text-[#1DCD9F] font-semibold">Database Design</span>, and <span class="text-[#1DCD9F] font-semibold">PL/SQL</span>.</li>
-            <li>Hands-on experience with <span class="text-[#1DCD9F] font-semibold">Stored Procedures</span>, <span class="text-[#1DCD9F] font-semibold">Apache</span>, and <span class="text-[#1DCD9F] font-semibold">Back-End Web Development</span>.</li>
-          </ul>          </div>
+      <!-- Journey Card 4 - Education -->
+      <div class="journey-milestone left-side">
+        <div class="milestone-marker education">
+          <div class="marker-core"></div>
+          <div class="marker-glow"></div>
         </div>
-        <div class="md:w-1/2"></div>
+        <div class="journey-card-modern education">
+          <div class="card-header">
+            <div class="role-badge education">EDUCATION</div>
+            <div class="status-completed">GRADUATED</div>
+          </div>
+          <h3 class="role-title">Software Engineering</h3>
+          <div class="timeline-meta">
+            <span class="duration">2017 - 2021</span>
+            <span class="company">Virtual University of Pakistan</span>
+          </div>
+          <div class="achievements-grid">
+            <div class="achievement-item">
+              <div class="achievement-icon">🎓</div>
+              <span>Bachelor's Degree</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🏆</div>
+              <span>Grade A</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🗃️</div>
+              <span>Database Design</span>
+            </div>
+            <div class="achievement-item">
+              <div class="achievement-icon">🔧</div>
+              <span>Data Structures</span>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -596,120 +806,216 @@ version: "1.88"
 -->
 
 <!-- BLOG SECTION -->
-<section id="blog" class="bg-black text-white py-20 px-6">
-  <div class="max-w-6xl mx-auto">
+<section id="blog" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <!-- Scanning Lines -->
+  <div class="scan-lines"></div>
+  
+  <div class="max-w-6xl mx-auto relative z-10">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4">Latest Blog Posts</h2>
-      <p class="text-gray-400 text-lg">Thoughts, tutorials, and insights from my journey in tech.</p>
+      <div class="blog-title-container">
+        <h2 class="blog-title">NEURAL_BLOG.EXE</h2>
+      </div>
+      <p class="blog-subtitle">Exploring the intersection of AI, code, and the future of programming</p>
+      <div class="status-indicator-blog">
+        <div class="status-dot-blog"></div>
+        <span class="status-text-blog">SYSTEM ACTIVE • PROCESSING INSIGHTS</span>
+      </div>
     </div>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Blog Post 1 -->
-      <article class="blog-card bg-[#111] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-        <div class="relative">
+      <!-- Blog Post 1 - AI Era Design -->
+      <article class="blog-card-futuristic">
+        <div class="card-header-glow"></div>
+        <div class="card-border-scan"></div>
+        
+        <div class="blog-image-container">
           <img src="./assets/The_Future_of_Coding_with_AI_A_Guide_for_Students_DEV_Community.png" 
-               alt="Portfolio Website Screenshot" 
-               class="w-full h-48 object-cover"
+               alt="AI Coding Future" 
+               class="blog-image"
                loading="lazy">
-          <div class="absolute top-4 left-4">
-            <span class="bg-[#1DCD9F] text-black px-3 py-1 rounded-full text-xs font-semibold">Artificial Intelligence (AI)</span>
+          <div class="image-overlay"></div>
+          <div class="category-chip ai">
+            <div class="chip-icon">🤖</div>
+            <span>AI.NEURAL</span>
           </div>
         </div>
-        <div class="p-6">
-          <div class="flex items-center text-sm text-gray-400 mb-3">
-            <i class="fas fa-calendar mr-2"></i>
-            <span>Aug 17, 2025</span>
-            <span class="mx-2">•</span>
-            <i class="fas fa-clock mr-2"></i>
-            <span>3 min read</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-white hover:text-[#1DCD9F] transition-colors">
-            <a href="#" class="block">Coding Future with AI: A Guide for Students</a>
-          </h3>
-          <p class="text-gray-300 mb-4 line-clamp-3">
-            AI is not meant to replace learning but to enhance it. Here’s how students can leverage AI effectively.AI can help you understand recursion step by step.
-          </p>
-          <div class="flex items-center justify-between">
-            <a href="https://dev.to/farman_alygorayah_d56b73/the-future-of-coding-with-ai-a-guide-for-students-2cln" class="text-[#1DCD9F] hover:text-[#17b890] font-semibold transition-colors">
-              Read More <i class="fas fa-arrow-right ml-1"></i>
-            </a>
-            <div class="flex items-center space-x-2">
-              <i class="fas fa-heart text-red-400"></i>
-              <span class="text-sm text-gray-400">10</span>
+        
+        <div class="blog-content">
+          <div class="metadata-bar">
+            <div class="timestamp">
+              <span class="date-prefix">PUBLISHED:</span>
+              <span class="date-value">2025.08.17</span>
             </div>
+            <div class="read-time">
+              <div class="progress-dots">
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot"></div>
+              </div>
+              <span>3 MIN_READ</span>
+            </div>
+          </div>
+          
+          <h3 class="blog-title-card">
+            <span class="title-prefix">&gt;</span>
+            <a href="https://dev.to/farman_alygorayah_d56b73/the-future-of-coding-with-ai-a-guide-for-students-2cln">Coding Future with AI: A Guide for Students</a>
+          </h3>
+          
+          <p class="blog-excerpt">
+            AI is not meant to replace learning but to enhance it. Discover how students can leverage artificial intelligence to accelerate their programming journey and build next-generation applications.
+          </p>
+          
+          <div class="blog-footer">
+            <div class="engagement-metrics">
+              <div class="metric">
+                <div class="heart-pulse"></div>
+                <span>10</span>
+              </div>
+              <div class="metric">
+                <div class="view-icon">👁</div>
+                <span>234</span>
+              </div>
+            </div>
+            <a href="https://dev.to/farman_alygorayah_d56b73/the-future-of-coding-with-ai-a-guide-for-students-2cln" class="read-link">
+              <span>EXECUTE_READ</span>
+              <div class="arrow-animation">→</div>
+            </a>
           </div>
         </div>
       </article>
 
-      <!-- Blog Post 2 -->
-      <article class="blog-card bg-[#111] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-        <div class="relative">
+      <!-- Blog Post 2 - Backend Focus Design -->
+      <article class="blog-card-futuristic">
+        <div class="card-header-glow"></div>
+        <div class="card-border-scan"></div>
+        
+        <div class="blog-image-container">
           <img src="./assets/php.jpg" 
-               alt="PHP Is Not Dead: A Reality Check for JavaScript Fanboys" 
-               class="w-full h-48 object-cover"
+               alt="PHP Reality Check" 
+               class="blog-image"
                loading="lazy">
-          <div class="absolute top-4 left-4">
-            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">PHP</span>
+          <div class="image-overlay"></div>
+          <div class="category-chip backend">
+            <div class="chip-icon">⚡</div>
+            <span>BACKEND.SYS</span>
           </div>
         </div>
-        <div class="p-6">
-          <div class="flex items-center text-sm text-gray-400 mb-3">
-            <i class="fas fa-calendar mr-2"></i>
-            <span>Aug 17, 2025</span>
-            <span class="mx-2">•</span>
-            <i class="fas fa-clock mr-2"></i>
-            <span>10 min read</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-white hover:text-[#1DCD9F] transition-colors">
-            <a href="#" class="block">PHP Is Not Dead: A Reality Check for JavaScript Fanboys</a>
-          </h3>
-          <p class="text-gray-300 mb-4 line-clamp-3">
-            Reality check: PHP is far from dead. It still powers millions of websites and apps, runs critical enterprise systems, and continues to evolve. PHP isn’t just surviving—it’s thriving, and it’s here to stay.
-          </p>
-          <div class="flex items-center justify-between">
-            <a href="https://dev.to/farman_alygorayah_d56b73/-why-php-is-not-dead-debunking-the-myth-and-proving-its-future-1o4d" class="text-[#1DCD9F] hover:text-[#17b890] font-semibold transition-colors">
-              Read More <i class="fas fa-arrow-right ml-1"></i>
-            </a>
-            <div class="flex items-center space-x-2">
-              <i class="fas fa-heart text-red-400"></i>
-              <span class="text-sm text-gray-400">5</span>
+        
+        <div class="blog-content">
+          <div class="metadata-bar">
+            <div class="timestamp">
+              <span class="date-prefix">PUBLISHED:</span>
+              <span class="date-value">2025.08.17</span>
             </div>
+            <div class="read-time">
+              <div class="progress-dots">
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot"></div>
+              </div>
+              <span>10 MIN_READ</span>
+            </div>
+          </div>
+          
+          <h3 class="blog-title-card">
+            <span class="title-prefix">&gt;</span>
+            <a href="https://dev.to/farman_alygorayah_d56b73/-why-php-is-not-dead-debunking-the-myth-and-proving-its-future-1o4d">PHP Is Not Dead: Reality Check for JS Fanboys</a>
+          </h3>
+          
+          <p class="blog-excerpt">
+            Reality check: PHP powers millions of websites and enterprise systems. It's not just surviving—it's evolving and thriving in the modern development landscape.
+          </p>
+          
+          <div class="blog-footer">
+            <div class="engagement-metrics">
+              <div class="metric">
+                <div class="heart-pulse"></div>
+                <span>5</span>
+              </div>
+              <div class="metric">
+                <div class="view-icon">👁</div>
+                <span>189</span>
+              </div>
+            </div>
+            <a href="https://dev.to/farman_alygorayah_d56b73/-why-php-is-not-dead-debunking-the-myth-and-proving-its-future-1o4d" class="read-link">
+              <span>EXECUTE_READ</span>
+              <div class="arrow-animation">→</div>
+            </a>
           </div>
         </div>
       </article>
-        <!-- Blog Post 3 -->
-      <article class="blog-card bg-[#111] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-        <div class="relative">
+        <!-- Blog Post 3 - Framework Optimization Design -->
+      <article class="blog-card-futuristic">
+        <div class="card-header-glow"></div>
+        <div class="card-border-scan"></div>
+        
+        <div class="blog-image-container">
           <img src="./assets/laravel-eloquent-orm.png" 
-               alt="Unlocking Hidden Laravel Eloquent Features" 
-               class="w-full h-48 object-cover"
+               alt="Laravel Eloquent Optimization" 
+               class="blog-image"
                loading="lazy">
-          <div class="absolute top-4 left-4">
-            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Laravel</span>
+          <div class="image-overlay"></div>
+          <div class="category-chip framework">
+            <div class="chip-icon">🔧</div>
+            <span>FRAMEWORK.OPT</span>
           </div>
         </div>
-        <div class="p-6">
-          <div class="flex items-center text-sm text-gray-400 mb-3">
-            <i class="fas fa-calendar mr-2"></i>
-            <span>Aug 17, 2025</span>
-            <span class="mx-2">•</span>
-            <i class="fas fa-clock mr-2"></i>
-            <span>10 min read</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-3 text-white hover:text-[#1DCD9F] transition-colors">
-            <a href="#" class="block">Unlocking Hidden Laravel Eloquent Features</a>
-          </h3>
-          <p class="text-gray-300 mb-4 line-clamp-3">
-            Laravel Eloquent is arguably one of the most elegant ORMs in the PHP ecosystem. Its simplicity often makes developers overlook the powerful optimization features hidden beneath the surface. While many developers rely on standard Eloquent queries, knowing the subtle, performance-enhancing tricks can make your application snappier and more resource-efficient. Today, we’ll explore some hidden gems and pro-level techniques to optimize Eloquent queries like a true Laravel artisan
-          </p>
-          <div class="flex items-center justify-between">
-            <a href="https://dev.to/farman_alygorayah_d56b73/-unlocking-hidden-laravel-eloquent-features-for-pro-level-query-optimization-1le" class="text-[#1DCD9F] hover:text-[#17b890] font-semibold transition-colors">
-              Read More <i class="fas fa-arrow-right ml-1"></i>
-            </a>
-            <div class="flex items-center space-x-2">
-              <i class="fas fa-heart text-red-400"></i>
-              <span class="text-sm text-gray-400">5</span>
+        
+        <div class="blog-content">
+          <div class="metadata-bar">
+            <div class="timestamp">
+              <span class="date-prefix">PUBLISHED:</span>
+              <span class="date-value">2025.08.17</span>
             </div>
+            <div class="read-time">
+              <div class="progress-dots">
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot"></div>
+              </div>
+              <span>10 MIN_READ</span>
+            </div>
+          </div>
+          
+          <h3 class="blog-title-card">
+            <span class="title-prefix">&gt;</span>
+            <a href="https://dev.to/farman_alygorayah_d56b73/-unlocking-hidden-laravel-eloquent-features-for-pro-level-query-optimization-1le">Unlocking Hidden Laravel Eloquent Features</a>
+          </h3>
+          
+          <p class="blog-excerpt">
+            Discover powerful Laravel Eloquent optimization techniques hidden beneath the surface. Master pro-level query optimization for faster, more efficient applications.
+          </p>
+          
+          <div class="blog-footer">
+            <div class="engagement-metrics">
+              <div class="metric">
+                <div class="heart-pulse"></div>
+                <span>8</span>
+              </div>
+              <div class="metric">
+                <div class="view-icon">👁</div>
+                <span>156</span>
+              </div>
+            </div>
+            <a href="https://dev.to/farman_alygorayah_d56b73/-unlocking-hidden-laravel-eloquent-features-for-pro-level-query-optimization-1le" class="read-link">
+              <span>EXECUTE_READ</span>
+              <div class="arrow-animation">→</div>
+            </a>
           </div>
         </div>
       </article>
@@ -790,9 +1096,16 @@ version: "1.88"
 
     <!-- View All Posts Button -->
     <div class="text-center mt-12">
-      <a href="https://dev.to/farman_alygorayah_d56b73" class="inline-flex items-center bg-[#1DCD9F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#17b890] transition-all duration-300 transform hover:scale-105">
-        View All Posts
-        <i class="fas fa-arrow-right ml-2"></i>
+      <a
+        href="https://dev.to/farman_alygorayah_d56b73"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="resume-btn"
+      >
+        <span>View All Posts</span>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+        </svg>
       </a>
     </div>
   </div>
@@ -801,10 +1114,20 @@ version: "1.88"
 <!-- UPCOMING PROJECTS SECTION -->
 
 <!-- PROJECTS SECTION -->
-<section id="projects" class="relative bg-black text-white py-20 px-6 overflow-hidden">
-
-  <!-- PARTICLES BACKGROUND -->
-  <div id="particles-projects" class="absolute top-0 left-0 w-full h-full z-0"></div>
+<section id="projects" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <!-- Scanning Lines -->
+  <div class="scan-lines"></div>
 
   <!-- ACTUAL PROJECT CONTENT -->
   <div class="relative z-10">
@@ -815,226 +1138,185 @@ version: "1.88"
 
     <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
 
-      <!-- SINGLE PROJECT CARD -->
-      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
-        <img src="./assets/TraqNext5.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover"/>
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-2">TraqNext: A Remote Monitoring Tool</h3>
-          <p class="text-gray-700 mb-4">
-            TraqNext is your all-in-one remote productivity and monitoring platform. From tracking time and tasks to monitoring activity and generating insightful reports, it helps teams stay accountable and businesses stay efficient. Whether you’re managing a remote crew or optimizing in-office workflows, TraqNext gives you clarity, control, and confidence — without the hassle.
+      <!-- SINGLE PROJECT CARD - FUTURISTIC DESIGN -->
+      <div class="project-card-futuristic">
+        <div class="project-border-glow"></div>
+        <div class="project-scan-line"></div>
+        
+        <div class="project-image-section">
+          <img src="./assets/TraqNext5.png" alt="TraqNext Monitoring Tool" class="project-image"/>
+          <div class="project-overlay"></div>
+        </div>
+        
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">
+              TraqNext: Remote Monitoring Tool
+            </h3>
+            <div class="project-type">ENTERPRISE_APP</div>
+          </div>
+          
+          <p class="project-description">
+            Full-stack remote productivity monitoring platform. Real-time tracking, insightful analytics, and comprehensive reporting for distributed teams and businesses.
           </p>
-
-          <!-- Tech Stack Badges -->
-            <div class="flex flex-wrap gap-3 mb-4">
-              <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="React" class="w-4 h-4" />
-              Laravel
-            </span>
-              <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="React" class="w-4 h-4" />
-              PHP
-            </span>
-                <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="React" class="w-4 h-4" />
-              MySQL
-            </span>
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="React" class="w-4 h-4" />
-              AWS
-            </span>
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" class="w-4 h-4" />
-              React
-            </span>
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-4 h-4" />
-              Tailwind CSS
-            </span>
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg" alt="Markdown" class="w-4 h-4" />
-              Markdown
-            </span>
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg" alt="Vite" class="w-4 h-4" />
-              Vite
-            </span>
-            <!-- Git -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-4 h-4" />
-            Git
-          </span>
-
-            <!-- GitHub -->
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="w-4 h-4" />
-              GitHub
-            </span>
-
-            <!-- GitLab -->
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" class="w-4 h-4" />
-              GitLab
-            </span>
-
-            <!-- Postman -->
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" class="w-4 h-4" />
-              Postman
-            </span>
-
-            <!-- Linux -->
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="w-4 h-4" />
-              Linux
-            </span>
-            <!-- Docker -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="w-4 h-4" />
-            Docker
-          </span>
-
-          <!-- Redis -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis" class="w-4 h-4" />
-            Redis
-          </span>
+          
+          <div class="project-features">
+            <div class="features-accordion">
+              <button class="accordion-trigger" data-project="traqnext">
+                <span class="accordion-title">Key Features Implemented:</span>
+                <div class="accordion-icon">
+                  <span class="chevron">▶</span>
+                </div>
+              </button>
+              <div class="accordion-content" id="traqnext-features">
+                <ul class="features-list">
+                  <li>Real-time activity monitoring and screenshot capture</li>
+                  <li>Advanced time tracking with productivity analytics</li>
+                  <li>Interactive dashboards with data visualizations</li>
+                  <li>Team management and role-based access control</li>
+                  <li>Automated report generation and export functionality</li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-          <!-- Project Links -->
-          <div class="flex gap-4">
-            <a href="https://traqnext.com/" target="_blank"
-              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
-              Live Demo 
+          <!-- Technologies Used Accordion -->
+          <div class="skills-accordion">
+            <button class="accordion-trigger" data-project="traqnext-skills">
+              <span class="accordion-title">Technologies Used:</span>
+              <div class="accordion-icon">
+                <span class="chevron">▶</span>
+              </div>
+            </button>
+            <div class="accordion-content" id="traqnext-skills-features">
+              <div class="tech-stack-grid">
+                <div class="tech-item-project backend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" />
+                  <span>Laravel</span>
+                </div>
+                <div class="tech-item-project backend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+                  <span>PHP</span>
+                </div>
+                <div class="tech-item-project database">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                  <span>MySQL</span>
+                </div>
+                <div class="tech-item-project cloud">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+                  <span>AWS</span>
+                </div>
+                <div class="tech-item-project frontend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+                  <span>React</span>
+                </div>
+                <div class="tech-item-project frontend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" />
+                  <span>Tailwind</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Actions -->
+          <div class="project-actions">
+            <a href="https://traqnext.com/" target="_blank" class="project-btn primary">
+              <div class="btn-scan-effect"></div>
+              <span class="btn-text">DEPLOY_LIVE</span>
+              <div class="btn-arrow">→</div>
             </a>
-            <!-- <a href="https://github.com/abhijeetBhale/Readme-Generator" target="_blank"
-              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
-              GitHub 
-            </a> -->
           </div>
         </div>
       </div>
       <!-- /SINGLE PROJECT CARD -->
 
-      <!-- SINGLE PROJECT CARD -->
-      <div class="project-card bg-white text-black shadow-xl rounded-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
-        <img src="./assets/veleroo.png" alt="Portfolio Website Screenshot" class="w-full h-60 object-cover" />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-2">valeroo</h3>
-          <p class="text-gray-700 mb-4">
-            Provide a B2B platform that connects the buyers with suppliers and access to thousands of products. Development of a powerful search engine that provides both buyers and suppliers to search each other based on detailed criteria..
+      <!-- SINGLE PROJECT CARD - FUTURISTIC DESIGN -->
+      <div class="project-card-futuristic">
+        <div class="project-border-glow"></div>
+        <div class="project-scan-line"></div>
+        
+        <div class="project-image-section">
+          <img src="./assets/veleroo.png" alt="Valeroo B2B Platform" class="project-image"/>
+          <div class="project-overlay"></div>
+        </div>
+        
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">
+              Valeroo: B2B Marketplace Platform
+            </h3>
+            <div class="project-type">B2B_PLATFORM</div>
+          </div>
+          
+          <p class="project-description">
+            Advanced B2B marketplace connecting buyers with suppliers. Features powerful search engine, detailed filtering system, and seamless product discovery for thousands of items.
           </p>
-
-          <!-- Tech Stack Badges -->
-            <div class="flex flex-wrap gap-3 mb-4">
-                 <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="React" class="w-4 h-4" />
-              Laravel
-            </span>
-              <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="React" class="w-4 h-4" />
-              PHP
-            </span>
-                <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="React" class="w-4 h-4" />
-              MySQL
-            </span>
-            <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="React" class="w-4 h-4" />
-              AWS
-            </span>
-            <!-- jQuery -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery" class="w-4 h-4" />
-            jQuery
-          </span>
-
-          <!-- HTML5 -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" class="w-4 h-4" />
-            HTML5
-          </span>
-
-          <!-- CSS3 -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" class="w-4 h-4" />
-            CSS3
-          </span>
-
-          <!-- JavaScript -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-4 h-4" />
-            JavaScript
-          </span>
-
-          <!-- Elasticsearch -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" class="w-4 h-4" />
-            Elasticsearch
-          </span>
-          <!-- Git -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="w-4 h-4" />
-            Git
-          </span>
-
-          <!-- GitHub -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="w-4 h-4" />
-            GitHub
-          </span>
-
-          <!-- GitLab -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" alt="GitLab" class="w-4 h-4" />
-            GitLab
-          </span>
-
-          <!-- Postman -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="Postman" class="w-4 h-4" />
-            Postman
-          </span>
-
-          <!-- Linux -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" class="w-4 h-4" />
-            Linux
-          </span>
-          <!-- Docker -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="w-4 h-4" />
-            Docker
-          </span>
-
-       <!-- Redis -->
-        <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" alt="Redis" class="w-4 h-4" />
-          Redis
-        </span>
-
-          <!-- Bootstrap -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-4 h-4" />
-            Bootstrap
-          </span>
-
-          <!-- React JS -->
-          <span class="flex items-center gap-1 bg-gray-100 px-2 py-1 text-xs rounded cursor-pointer">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React JS" class="w-4 h-4" />
-            React JS
-          </span>
+          
+          <div class="project-features">
+            <div class="features-accordion">
+              <button class="accordion-trigger" data-project="valeroo">
+                <span class="accordion-title">Key Features Implemented:</span>
+                <div class="accordion-icon">
+                  <span class="chevron">▶</span>
+                </div>
+              </button>
+              <div class="accordion-content" id="valeroo-features">
+                <ul class="features-list">
+                  <li>Advanced Elasticsearch-powered search engine</li>
+                  <li>Multi-criteria product filtering and categorization</li>
+                  <li>Buyer-supplier matching algorithm</li>
+                  <li>Real-time inventory management system</li>
+                  <li>Secure payment gateway integration</li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-          <!-- Project Links -->
-          <div class="flex gap-4">
-            <a href="https://valeroo.com/" target="_blank"
-              class="bg-[#1DCD9F] text-white px-4 py-2 rounded hover:bg-[#17b890] transition-all text-sm">
-              Live Demo 
+          <!-- Technologies Used Accordion -->
+          <div class="skills-accordion">
+            <button class="accordion-trigger" data-project="valeroo-skills">
+              <span class="accordion-title">Technologies Used:</span>
+              <div class="accordion-icon">
+                <span class="chevron">▶</span>
+              </div>
+            </button>
+            <div class="accordion-content" id="valeroo-skills-features">
+              <div class="tech-stack-grid">
+                <div class="tech-item-project backend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" />
+                  <span>Laravel</span>
+                </div>
+                <div class="tech-item-project backend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+                  <span>PHP</span>
+                </div>
+                <div class="tech-item-project database">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                  <span>MySQL</span>
+                </div>
+                <div class="tech-item-project cloud">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+                  <span>AWS</span>
+                </div>
+                <div class="tech-item-project frontend">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                  <span>JavaScript</span>
+                </div>
+                <div class="tech-item-project database">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" />
+                  <span>Elasticsearch</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Actions -->
+          <div class="project-actions">
+            <a href="https://valeroo.com/" target="_blank" class="project-btn primary">
+              <div class="btn-scan-effect"></div>
+              <span class="btn-text">DEPLOY_LIVE</span>
+              <div class="btn-arrow">→</div>
             </a>
-            <!-- <a href="https://github.com/abhijeetBhale/ATS-Resume-Checker" target="_blank"
-              class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition-all text-sm">
-              GitHub 
-            </a> -->
           </div>
         </div>
       </div>
@@ -1075,57 +1357,92 @@ version: "1.88"
 </section> -->
 
 <!-- CONTACT FORM SECTION -->
-<section id="contact-form" class="bg-[#0f0f0f] text-white py-20 px-6">
-  <div class="max-w-4xl mx-auto">
+<section id="contact-form" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <!-- Scanning Lines -->
+  <div class="scan-lines"></div>
+  
+  <div class="max-w-4xl mx-auto relative z-10">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
-      <p class="text-gray-400 text-lg">Let's discuss your next project or just say hello!</p>
+      <div class="contact-title-container">
+        <h2 class="contact-title">INIT_CONNECTION.EXE</h2>
+        <div class="contact-title-underline"></div>
+      </div>
+      <p class="contact-subtitle">Establishing secure communication channel for project collaboration</p>
+      <div class="contact-status-indicator">
+        <div class="contact-status-dot"></div>
+        <span class="contact-status-text">SYSTEM READY • AWAITING INPUT</span>
+      </div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10">
-      <!-- Contact Info -->
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-2xl font-semibold mb-4 text-[#1DCD9F]">Let's Connect</h3>
-          <p class="text-gray-300 mb-6">I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and development.</p>
+      <!-- Contact Info - Simple Sidebar Format -->
+      <div class="contact-info-sidebar">
+        <div class="sidebar-header">
+          <h3 class="sidebar-title">Let's Connect</h3>
+          <div class="sidebar-divider"></div>
+          <p class="sidebar-description">I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and development.</p>
         </div>
         
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-[#1DCD9F] rounded-full flex items-center justify-center">
-              <i class="fas fa-envelope text-white"></i>
+        <!-- Contact Details -->
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
             </div>
-            <div>
-              <p class="text-sm text-gray-400">Email</p>
-              <p class="text-white">farmanali1588594@gmail.com</p>
-            </div>
-          </div>
-          
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-[#1DCD9F] rounded-full flex items-center justify-center">
-              <i class="fas fa-map-marker-alt text-white"></i>
-            </div>
-            <div>
-              <p class="text-sm text-gray-400">Location</p>
-              <p class="text-white">Lahore, Punjab, Pakistan</p>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">farmanali1588594@gmail.com</span>
             </div>
           </div>
           
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-[#1DCD9F] rounded-full flex items-center justify-center">
-              <i class="fas fa-clock text-white"></i>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
             </div>
-            <div>
-              <p class="text-sm text-gray-400">Response Time</p>
-              <p class="text-white">Within 24 hours</p>
+            <div class="contact-info">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Lahore, Punjab, Pakistan</span>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Response Time</span>
+              <span class="contact-value">Within 24 hours</span>
             </div>
           </div>
         </div>
+        
       </div>
 
       <!-- Contact Form -->
-      <div class="bg-white text-black rounded-2xl p-8 shadow-xl">
-        <form id="contactForm" class="space-y-6">
+      <div class="contact-form-futuristic">
+        <div class="form-header-glow"></div>
+        <div class="form-scan-border"></div>
+        
+        <div class="form-header">
+          <h3 class="form-title">
+            <span class="form-prefix">></span>
+            MESSAGE_INTERFACE
+          </h3>
+          <div class="form-status">SECURE_CHANNEL</div>
+        </div>
+        
+        <form id="contactForm" class="futuristic-form">
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label for="firstName" class="block text-sm font-medium mb-2">First Name <span style="color: red">*</span></label>
@@ -1200,12 +1517,18 @@ version: "1.88"
           <button 
             type="submit" 
             id="submitBtn"
-            class="w-full bg-[#1DCD9F] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#17b890] transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-[#1DCD9F] focus:ring-offset-2"
+            class="contact-submit-btn"
           >
-            <span id="submitText">Send Message</span>
-            <span id="submitLoading" class="hidden">
-              <i class="fas fa-spinner fa-spin mr-2"></i>Sending...
-            </span>
+            <div class="submit-btn-scan"></div>
+            <div class="submit-btn-content">
+              <span class="submit-prefix">></span>
+              <span id="submitText" class="submit-text">TRANSMIT_MESSAGE</span>
+              <span id="submitLoading" class="hidden submit-loading">
+                <div class="loading-spinner"></div>
+                PROCESSING...
+              </span>
+            </div>
+            <div class="submit-btn-glow"></div>
           </button>
         </form>
         
@@ -1219,8 +1542,22 @@ version: "1.88"
 </section>
 
 <!-- CONTACT SECTION -->
-<section id="contact" class="bg-black text-white py-20 px-6 flex items-center justify-center">
-  <div class="w-full max-w-4xl text-center flex flex-col items-center gap-6">
+<section id="contact" class="futuristic-bg text-white py-20 px-6 relative overflow-hidden flex items-center justify-center">
+  <!-- Background Elements -->
+  <div class="bg-grid"></div>
+  <div class="bg-gradient-overlay"></div>
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <!-- Scanning Lines -->
+  <div class="scan-lines"></div>
+  
+  <div class="w-full max-w-4xl text-center flex flex-col items-center gap-6 relative z-10">
     <!-- Subtitle -->
     <p class="text-gray-400 text-lg">Let's connect and build something amazing!</p>
 
@@ -1298,6 +1635,298 @@ version: "1.88"
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Futuristic Effects Script -->
+    <script>
+      // Accordion Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize accordion triggers
+        const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+        
+        accordionTriggers.forEach(trigger => {
+          trigger.addEventListener('click', function() {
+            const project = this.getAttribute('data-project');
+            // Handle both features and skills accordions
+            let contentId = project + '-features';
+            if (project.includes('-skills')) {
+              contentId = project + '-features';
+            }
+            const content = document.getElementById(contentId);
+            const chevron = this.querySelector('.chevron');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other accordions
+            accordionTriggers.forEach(otherTrigger => {
+              if (otherTrigger !== this) {
+                const otherProject = otherTrigger.getAttribute('data-project');
+                let otherContentId = otherProject + '-features';
+                if (otherProject.includes('-skills')) {
+                  otherContentId = otherProject + '-features';
+                }
+                const otherContent = document.getElementById(otherContentId);
+                const otherChevron = otherTrigger.querySelector('.chevron');
+                
+                if (otherContent) {
+                  otherTrigger.setAttribute('aria-expanded', 'false');
+                  otherTrigger.classList.remove('active');
+                  otherContent.classList.remove('expanded');
+                  otherChevron.style.transform = 'rotate(0deg)';
+                }
+              }
+            });
+            
+            // Toggle current accordion
+            if (content) {
+              if (!isExpanded) {
+                this.setAttribute('aria-expanded', 'true');
+                this.classList.add('active');
+                content.classList.add('expanded');
+                chevron.style.transform = 'rotate(90deg)';
+              } else {
+                this.setAttribute('aria-expanded', 'false');
+                this.classList.remove('active');
+                content.classList.remove('expanded');
+                chevron.style.transform = 'rotate(0deg)';
+              }
+            }
+          });
+        });
+      });
+
+      // Dynamic Programming Quotes Animation
+      document.addEventListener('DOMContentLoaded', function() {
+        const quotes = [
+          {
+            text: "Code is poetry written for machines",
+            author: "- Software Philosophy"
+          },
+          {
+            text: "First solve the problem, then write the code",
+            author: "- John Johnson"
+          },
+          {
+            text: "Any fool can write code that a computer can understand",
+            author: "- Martin Fowler"
+          },
+          {
+            text: "Clean code always looks like it was written by someone who cares",
+            author: "- Robert C. Martin"
+          },
+          {
+            text: "Programs must be written for people to read",
+            author: "- Harold Abelson"
+          },
+          {
+            text: "The best error message is the one that never shows up",
+            author: "- Thomas Fuchs"
+          },
+          {
+            text: "Debugging is twice as hard as writing code",
+            author: "- Brian Kernighan"
+          },
+          {
+            text: "Code never lies, comments sometimes do",
+            author: "- Ron Jeffries"
+          },
+          {
+            text: "Simplicity is the soul of efficiency",
+            author: "- Austin Freeman"
+          },
+          {
+            text: "Talk is cheap, show me the code",
+            author: "- Linus Torvalds"
+          }
+        ];
+        
+        let currentIndex = 0;
+        const quoteElement = document.getElementById('quote-text');
+        const authorElement = document.getElementById('quote-author');
+        
+        function typeQuote(text, element, callback) {
+          let i = 0;
+          element.textContent = '';
+          
+          const typing = setInterval(() => {
+            element.textContent += text[i];
+            i++;
+            
+            if (i >= text.length) {
+              clearInterval(typing);
+              setTimeout(callback, 1000); // Wait 1 second before showing author
+            }
+          }, 80);
+        }
+        
+        function eraseQuote(element, callback) {
+          const currentText = element.textContent;
+          let i = currentText.length;
+          
+          const erasing = setInterval(() => {
+            element.textContent = currentText.substring(0, i);
+            i--;
+            
+            if (i < 0) {
+              clearInterval(erasing);
+              setTimeout(callback, 500); // Wait 0.5 seconds before typing next
+            }
+          }, 40);
+        }
+        
+        function cycleQuotes() {
+          const currentQuote = quotes[currentIndex];
+          
+          typeQuote(currentQuote.text, quoteElement, () => {
+            // Show author with fade-in effect
+            authorElement.textContent = currentQuote.author;
+            authorElement.style.opacity = '1';
+            authorElement.style.transform = 'translateY(0)';
+            
+            setTimeout(() => {
+              // Hide author with fade-out effect
+              authorElement.style.opacity = '0';
+              authorElement.style.transform = 'translateY(-10px)';
+              
+              setTimeout(() => {
+                authorElement.textContent = '';
+                
+                eraseQuote(quoteElement, () => {
+                  currentIndex = (currentIndex + 1) % quotes.length;
+                  cycleQuotes();
+                });
+              }, 500); // Wait for fade-out animation
+            }, 6000); // Show quote and author for 6 seconds
+          });
+        }
+        
+        // Start the cycle after initial load
+        setTimeout(() => {
+          cycleQuotes();
+        }, 2000);
+        
+        // Matrix rain effect for background enhancement
+        function createMatrixRain() {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.style.position = 'absolute';
+          canvas.style.top = '0';
+          canvas.style.left = '0';
+          canvas.style.width = '100%';
+          canvas.style.height = '100%';
+          canvas.style.opacity = '0.1';
+          canvas.style.zIndex = '-1';
+          canvas.style.pointerEvents = 'none';
+          
+          document.querySelector('.futuristic-hero').appendChild(canvas);
+          
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          
+          const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+          const charArray = chars.split('');
+          const fontSize = 14;
+          const columns = canvas.width / fontSize;
+          const drops = [];
+          
+          for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+          }
+          
+          function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff88';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+              const text = charArray[Math.floor(Math.random() * charArray.length)];
+              ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+              
+              if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+              }
+              drops[i]++;
+            }
+          }
+          
+          setInterval(draw, 100);
+        }
+        
+        // Initialize matrix rain
+        createMatrixRain();
+        
+        // Matrix rain for loading screen
+        createLoadingMatrixRain();
+      });
+      
+      // Matrix rain effect for loading screen
+      function createLoadingMatrixRain() {
+        const loadingElement = document.getElementById('loading');
+        if (!loadingElement) return;
+        
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.opacity = '0.3';
+        canvas.style.zIndex = '1';
+        canvas.style.pointerEvents = 'none';
+        canvas.id = 'loading-matrix';
+        
+        loadingElement.appendChild(canvas);
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const chars = '01{}[];()<?/>.-=+*&^%$#@!~`|\\abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const charArray = chars.split('');
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        
+        for (let i = 0; i < columns; i++) {
+          drops[i] = Math.floor(Math.random() * canvas.height / fontSize);
+        }
+        
+        function drawLoadingMatrix() {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          
+          ctx.fillStyle = '#00ff88';
+          ctx.font = fontSize + 'px monospace';
+          
+          for (let i = 0; i < drops.length; i++) {
+            const text = charArray[Math.floor(Math.random() * charArray.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            drops[i]++;
+          }
+        }
+        
+        const loadingMatrixInterval = setInterval(drawLoadingMatrix, 50);
+        
+        // Clean up when loading is done
+        const observer = new MutationObserver(() => {
+          if (loadingElement.style.display === 'none' || !document.body.contains(loadingElement)) {
+            clearInterval(loadingMatrixInterval);
+            observer.disconnect();
+          }
+        });
+        
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['style']
+        });
+      }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Back to Top Button -->
@@ -1310,6 +1939,409 @@ version: "1.88"
       </button>
     </div>
     <script src="script.js"></script>
+    
+    <!-- Game-Style Audio System -->
+    <script>
+      // Advanced Game Audio System
+      class GameAudioSystem {
+        constructor() {
+          this.audioContext = null;
+          this.masterVolume = 0.3;
+          this.enabled = true;
+          this.soundCache = new Map();
+          this.lastPlayTime = new Map();
+          this.cooldown = 100; // ms between same sound plays
+          
+          this.initAudioContext();
+          this.setupVolumeControl();
+        }
+        
+        async initAudioContext() {
+          try {
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Resume context on first user interaction
+            const resumeContext = () => {
+              if (this.audioContext.state === 'suspended') {
+                this.audioContext.resume();
+              }
+              document.removeEventListener('click', resumeContext);
+              document.removeEventListener('keydown', resumeContext);
+              document.removeEventListener('touchstart', resumeContext);
+            };
+            
+            document.addEventListener('click', resumeContext);
+            document.addEventListener('keydown', resumeContext);
+            document.addEventListener('touchstart', resumeContext);
+            
+          } catch (error) {
+            console.log('Web Audio API not supported');
+            this.enabled = false;
+          }
+        }
+        
+        setupVolumeControl() {
+          // Add volume control (hidden by default)
+          const volumeControl = document.createElement('div');
+          volumeControl.id = 'audioVolumeControl';
+          volumeControl.innerHTML = `
+            <div style="position: fixed; top: 20px; right: 20px; z-index: 10001; background: rgba(0,0,0,0.8); padding: 10px; border-radius: 5px; display: none;" id="volumePanel">
+              <label style="color: #00ff88; font-size: 12px;">Audio: </label>
+              <input type="range" id="volumeSlider" min="0" max="100" value="30" style="width: 80px;">
+              <button id="muteBtn" style="background: none; border: 1px solid #00ff88; color: #00ff88; padding: 2px 6px; margin-left: 5px; font-size: 10px;">🔊</button>
+            </div>
+          `;
+          document.body.appendChild(volumeControl);
+          
+          // Toggle volume panel on Ctrl+M
+          document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'm') {
+              const panel = document.getElementById('volumePanel');
+              panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            }
+          });
+          
+          // Volume control
+          const slider = document.getElementById('volumeSlider');
+          const muteBtn = document.getElementById('muteBtn');
+          
+          slider.addEventListener('input', (e) => {
+            this.masterVolume = e.target.value / 100;
+          });
+          
+          muteBtn.addEventListener('click', () => {
+            this.enabled = !this.enabled;
+            muteBtn.textContent = this.enabled ? '🔊' : '🔇';
+          });
+        }
+        
+        // Create futuristic hover sound
+        createHoverSound(frequency = 800, duration = 0.1) {
+          if (!this.enabled || !this.audioContext) return;
+          
+          const oscillator = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+          const filterNode = this.audioContext.createBiquadFilter();
+          
+          // Configure filter for sci-fi effect
+          filterNode.type = 'lowpass';
+          filterNode.frequency.setValueAtTime(frequency * 2, this.audioContext.currentTime);
+          filterNode.frequency.exponentialRampToValueAtTime(frequency, this.audioContext.currentTime + duration);
+          
+          // Configure oscillator
+          oscillator.type = 'sine';
+          oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency * 1.2, this.audioContext.currentTime + duration * 0.3);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency, this.audioContext.currentTime + duration);
+          
+          // Configure gain envelope
+          gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(this.masterVolume * 0.3, this.audioContext.currentTime + 0.01);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+          
+          // Connect nodes
+          oscillator.connect(filterNode);
+          filterNode.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+          
+          // Play sound
+          oscillator.start(this.audioContext.currentTime);
+          oscillator.stop(this.audioContext.currentTime + duration);
+        }
+        
+        // Create sharp click sound
+        createClickSound(frequency = 2000, duration = 0.08) {
+          if (!this.enabled || !this.audioContext) return;
+          
+          const oscillator = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+          const filterNode = this.audioContext.createBiquadFilter();
+          
+          // Configure filter for sharp high-frequency sound
+          filterNode.type = 'highpass';
+          filterNode.frequency.setValueAtTime(frequency * 0.8, this.audioContext.currentTime);
+          filterNode.Q.setValueAtTime(8, this.audioContext.currentTime);
+          
+          // Configure oscillator for sharp metallic sound
+          oscillator.type = 'sawtooth';
+          oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency * 2.5, this.audioContext.currentTime + 0.01);
+          oscillator.frequency.exponentialRampToValueAtTime(frequency * 0.3, this.audioContext.currentTime + duration);
+          
+          // Very sharp attack and quick decay
+          gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(this.masterVolume * 0.8, this.audioContext.currentTime + 0.002);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+          
+          // Connect nodes
+          oscillator.connect(filterNode);
+          filterNode.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+          
+          // Play sound
+          oscillator.start(this.audioContext.currentTime);
+          oscillator.stop(this.audioContext.currentTime + duration);
+        }
+        
+        // Create tech/digital sound effect
+        createTechSound(baseFreq = 600, duration = 0.15) {
+          if (!this.enabled || !this.audioContext) return;
+          
+          const oscillator = this.audioContext.createOscillator();
+          const gainNode = this.audioContext.createGain();
+          const filterNode = this.audioContext.createBiquadFilter();
+          const delayNode = this.audioContext.createDelay();
+          const feedbackNode = this.audioContext.createGain();
+          
+          // Configure delay for digital effect
+          delayNode.delayTime.setValueAtTime(0.02, this.audioContext.currentTime);
+          feedbackNode.gain.setValueAtTime(0.3, this.audioContext.currentTime);
+          
+          // Configure filter
+          filterNode.type = 'highpass';
+          filterNode.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
+          
+          // Configure oscillator with frequency modulation
+          oscillator.type = 'sawtooth';
+          oscillator.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
+          oscillator.frequency.setValueAtTime(baseFreq * 1.5, this.audioContext.currentTime + 0.05);
+          oscillator.frequency.setValueAtTime(baseFreq * 0.8, this.audioContext.currentTime + duration);
+          
+          // Configure gain
+          gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+          gainNode.gain.linearRampToValueAtTime(this.masterVolume * 0.4, this.audioContext.currentTime + 0.01);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+          
+          // Connect nodes with delay feedback
+          oscillator.connect(filterNode);
+          filterNode.connect(delayNode);
+          delayNode.connect(feedbackNode);
+          feedbackNode.connect(delayNode);
+          filterNode.connect(gainNode);
+          delayNode.connect(gainNode);
+          gainNode.connect(this.audioContext.destination);
+          
+          // Play sound
+          oscillator.start(this.audioContext.currentTime);
+          oscillator.stop(this.audioContext.currentTime + duration);
+        }
+        
+        // Play sound with cooldown
+        playSound(soundType, ...params) {
+          const now = Date.now();
+          const lastPlayed = this.lastPlayTime.get(soundType) || 0;
+          
+          if (now - lastPlayed < this.cooldown) return;
+          
+          this.lastPlayTime.set(soundType, now);
+          
+          switch (soundType) {
+            case 'hover':
+              this.createHoverSound(...params);
+              break;
+            case 'click':
+              this.createClickSound(...params);
+              break;
+            case 'tech':
+              this.createTechSound(...params);
+              break;
+          }
+        }
+      }
+      
+      // Initialize audio system
+      let gameAudio;
+      document.addEventListener('DOMContentLoaded', () => {
+        gameAudio = new GameAudioSystem();
+      });
+    </script>
+    
+    <!-- Advanced Futuristic Cursor System -->
+    <script>
+      // High-Performance Cursor Implementation
+      document.addEventListener('DOMContentLoaded', function() {
+        const cursor = document.getElementById('customCursor');
+        if (!cursor) return;
+        
+        // Performance optimized variables
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let isMoving = false;
+        let lastMoveTime = 0;
+        const trails = new Set();
+        const maxTrails = 8;
+        let animationId;
+        
+        // Default cursor movement
+        function updateCursor() {
+          cursorX = mouseX;
+          cursorY = mouseY;
+          
+          cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+          
+          // Create trails when moving
+          const velocity = Math.sqrt((mouseX - cursorX) ** 2 + (mouseY - cursorY) ** 2);
+          if (velocity > 2 && Date.now() - lastMoveTime > 80) {
+            createTrail(cursorX, cursorY);
+            lastMoveTime = Date.now();
+          }
+          
+          animationId = requestAnimationFrame(updateCursor);
+        }
+        
+        // Optimized trail creation
+        function createTrail(x, y) {
+          if (trails.size >= maxTrails) {
+            const oldTrail = trails.values().next().value;
+            if (oldTrail?.parentNode) {
+              oldTrail.parentNode.removeChild(oldTrail);
+            }
+            trails.delete(oldTrail);
+          }
+          
+          const trail = document.createElement('div');
+          trail.className = cursor.classList.contains('click') ? 'cursor-trail click-trail' : 'cursor-trail';
+          trail.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          document.body.appendChild(trail);
+          trails.add(trail);
+          
+          // Fast cleanup
+          setTimeout(() => {
+            if (trail?.parentNode) {
+              trail.parentNode.removeChild(trail);
+              trails.delete(trail);
+            }
+          }, 600);
+        }
+        
+        // Create scan line effect on fast movement
+        function createScanline(x, y) {
+          const scanline = document.createElement('div');
+          scanline.className = 'cursor-scanline';
+          scanline.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          document.body.appendChild(scanline);
+          
+          setTimeout(() => {
+            if (scanline?.parentNode) {
+              scanline.parentNode.removeChild(scanline);
+            }
+          }, 800);
+        }
+        
+        // High-frequency mouse tracking
+        let rafId;
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          
+          // Create scanlines on very fast movement
+          const velocity = Math.sqrt(
+            Math.pow(e.movementX, 2) + Math.pow(e.movementY, 2)
+          );
+          
+          if (velocity > 10 && Math.random() < 0.3) {
+            createScanline(mouseX, mouseY);
+          }
+        }, { passive: true });
+        
+        // Enhanced hover detection with delegation
+        const interactiveSelectors = [
+          'a', 'button', 'input', 'textarea', 'select',
+          '.clickable', '.tech-item', '.social-link', 
+          '.social-link-simple', '.resume-btn', '.social-btn',
+          '.blog-view-all-btn', '.journey-card', '.project-card'
+        ];
+        
+        document.addEventListener('mouseover', (e) => {
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target) {
+            cursor.classList.add('hover');
+          }
+        }, { passive: true });
+        
+        document.addEventListener('mouseout', (e) => {
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target && !e.relatedTarget?.closest(interactiveSelectors.join(', '))) {
+            cursor.classList.remove('hover');
+          }
+        }, { passive: true });
+        
+        // Instant click feedback
+        document.addEventListener('mousedown', (e) => {
+          cursor.classList.add('click');
+          createTrail(cursorX, cursorY);
+          // Play click sound on interactive elements
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target && gameAudio) {
+            gameAudio.playSound('click');
+          }
+        }, { passive: true });
+        
+        document.addEventListener('mouseup', () => {
+          cursor.classList.remove('click');
+        }, { passive: true });
+        
+        // Always visible cursor
+        cursor.style.opacity = '1';
+        document.addEventListener('mouseenter', () => {
+          if (!animationId) updateCursor();
+        }, { passive: true });
+        
+        // Keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Tab') {
+            cursor.classList.add('hover');
+            setTimeout(() => cursor.classList.remove('hover'), 200);
+          }
+          if (e.key === 'Enter' && document.activeElement?.closest(interactiveSelectors.join(', '))) {
+            // Play click sound for keyboard activation
+            if (gameAudio) {
+              gameAudio.playSound('click');
+            }
+          }
+        }, { passive: true });
+        
+        // Touch support for mobile devices
+        document.addEventListener('touchend', (e) => {
+          const target = e.target.closest(interactiveSelectors.join(', '));
+          if (target && gameAudio) {
+            gameAudio.playSound('click');
+          }
+        }, { passive: true });
+        
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        
+        function monitorPerformance() {
+          frameCount++;
+          const currentTime = performance.now();
+          
+          if (currentTime - lastTime >= 1000) {
+            const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+            if (fps < 30) {
+              // Reduce trails for better performance
+              maxTrails = Math.max(3, maxTrails - 1);
+            }
+            frameCount = 0;
+            lastTime = currentTime;
+          }
+        }
+        
+        // Initialize with optimizations
+        cursor.style.willChange = 'transform';
+        updateCursor();
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+          if (animationId) cancelAnimationFrame(animationId);
+          trails.forEach(trail => {
+            if (trail?.parentNode) trail.parentNode.removeChild(trail);
+          });
+          trails.clear();
+        });
+      });
+    </script>
     </script>
   </body>
 </html>
@@ -1319,11 +2351,42 @@ version: "1.88"
 <style>
   .resume-btn{
     display:inline-flex;align-items:center;gap:12px;
-    padding:12px 18px;border-radius:12px;
-    background:linear-gradient(135deg,#1DCD9F 0%,#0ea5e9 100%);
-    color:#fff;text-decoration:none;font-weight:600;
-    box-shadow:0 8px 24px rgba(14,165,233,.25);transition:.2s ease;
+    padding:14px 24px;border-radius:8px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
+    border: 2px solid #00ff88;
+    color:#00ff88;text-decoration:none;font-weight:600;
+    box-shadow:0 0 20px rgba(0, 255, 136, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
   }
-  .resume-btn:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(14,165,233,.35);}
-  .resume-btn svg{width:20px;height:20px;flex:0 0 auto;}
+  .resume-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  .resume-btn:hover{
+    transform:translateY(-3px);
+    border-color: #00ff88;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 136, 0.1));
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  }
+  .resume-btn:hover::before {
+    left: 100%;
+  }
+  .resume-btn svg{width:20px;height:20px;flex:0 0 auto;transition: all 0.3s ease;}
+  .resume-btn:hover svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(0, 255, 136, 0.8));
+  }
 </style>
